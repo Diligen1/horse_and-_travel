@@ -66,9 +66,9 @@ export default function Gallery() {
           <div className="w-[100%] h-[100vh] lg:w-[38%] lg:h-[90vh] bg-blue-700 z-10 top-[50%] left-[50%] transform translate-x-[-50%] translate-y-[-50%] fixed flex-row justify-center items-center">
             <div
               onClick={handlemodelclose}
-              className="text-[24px] text-white absolute z-20 right-[30px] cursor-pointer transform translate-x-1/2 top-[20px]"
+              className="text-[24px] text-white absolute z-20 right-[30px] cursor-pointer transform translate-x-1/2 top-[10px]"
             >
-              <i className="fi fi-rr-cross"></i>
+              <i className="fi fi-rr-cross lg:text-[18px] text-[14px]"></i>
             </div>
             <Swiper
               pagination={{ clickable: true }}
