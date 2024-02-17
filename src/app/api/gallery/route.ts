@@ -6,6 +6,8 @@ import image_5 from "@/assets/images/gallery/photo1705559289 (4).jpeg";
 import image_6 from "@/assets/images/gallery/photo1705559289 (6).jpeg";
 import image_7 from "@/assets/images/gallery/photo1705559289 (7).jpeg";
 import image_8 from "@/assets/images/gallery/photo1705559289 (8).jpeg";
+import image_9 from "@/assets/images/gallery/photo1705559289 (9).jpeg";
+import image_10 from "@/assets/images/gallery/photo1705559289.jpeg";
 
 export async function GET() {
   const data = imageData();
@@ -55,6 +57,16 @@ function imageData() {
         {
           id: 8,
           image: image_8,
+          text: "Изображение - 6",
+        },
+        {
+          id: 9,
+          image: image_9,
+          text: "Изображение - 6",
+        },
+        {
+          id: 10,
+          image: image_10,
           text: "Изображение - 6",
         },
       ],

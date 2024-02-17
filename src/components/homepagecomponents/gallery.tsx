@@ -13,8 +13,7 @@ export default function Gallery() {
   const [imageData, setImageDate] = useState<imagesCol[]>([]);
   const [selectedImage, setSelectedImage] = useState<imagesCol | null>(null);
 
-  function handlemodelopen(image: imagesCol) {
-    setSelectedImage(image);
+  function handlemodelopen() {
     setModelopen(true);
   }
   function handlemodelclose() {
@@ -46,25 +45,25 @@ export default function Gallery() {
 
   return (
     <main className="mx-auto " id="gallery">
-      <div className="w-full h-[600px] relative">
-        <div>
-          <h1>GALLERY</h1>
+      <div className="w-full pb-[20px] relative bg-blue-600">
+        <div className="text-center py-[20px]">
+          <h1 className=" text-[24px] text-white lg:text-[36px]">GALLERY</h1>
         </div>
         <div className="w-full flex flex-wrap  justify-center items-center">
           {imageData.map((el) => (
-            <div key={el.id} className="w-[250px] h-[250px] overflow-y-hidden">
+            <div key={el.id} className="w-[260px] h-[250px] overflow-y-hidden">
               <Image
                 src={el.image}
                 alt="#"
                 priority
-                className="w-[250px] "
-                onClick={() => handlemodelopen(el)}
+                className="w-[260px] "
+                onClick={handlemodelopen}
               />
             </div>
           ))}
         </div>
         {modalopen && (
-          <div className="w-[100%] h-[100vh] lg:w-[80%] lg:h-[90vh] bg-blue-700 z-10 top-[50%] left-[50%] transform translate-x-[-50%] translate-y-[-50%] fixed flex-row justify-center items-center">
+          <div className="w-[100%] h-[100vh] lg:w-[38%] lg:h-[90vh] bg-blue-700 z-10 top-[50%] left-[50%] transform translate-x-[-50%] translate-y-[-50%] fixed flex-row justify-center items-center">
             <div
               onClick={handlemodelclose}
               className="text-[24px] text-white absolute z-20 right-[30px] cursor-pointer transform translate-x-1/2 top-[20px]"
@@ -85,10 +84,10 @@ export default function Gallery() {
               {imageData.map((el) => (
                 <SwiperSlide key={el.id} className=" w-full h-[100%]  ">
                   <Image
-                    src={selectedImage?.image}
+                    src={el.image}
                     alt="#"
                     priority
-                    className=" w-full lg:h-full lg:w-auto h-auto  lg:py-[5px]"
+                    className="w-full lg:h-[100%] lg:w-[100%] h-[100%] aspect-3/2 object-contain"
                   />
                 </SwiperSlide>
               ))}
