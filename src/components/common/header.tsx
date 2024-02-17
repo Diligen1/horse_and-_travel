@@ -71,16 +71,16 @@ export default function Header() {
             className="lhidden w-[25px] h-[25px] flex flex-col justify-between"
             onClick={handleopenburger}
           >
-            <div className="w-full h-[4px] bg-blue-800"></div>
-            <div className="w-full h-[4px] bg-blue-800"></div>
-            <div className="w-full h-[4px] bg-blue-800"></div>
+            <div className="w-full h-[4px] bg-white"></div>
+            <div className="w-full h-[4px] bg-white"></div>
+            <div className="w-full h-[4px] bg-white"></div>
           </div>
         </div>
       </div>
       {burger && (
         <div
           className={
-            'bottom-0 w-[160px] h-[100vh] fixed left-0 bg-blue-600 flex-col items-center justify-around  transition-transform transform  duration-500 ease-in-out ${burger ? "translate-x-0" : "-translate-x-[-160px]}'
+            'bottom-0 w-[140px] sm:w-[180px] h-[100vh] z-10 absolute left-0 bg-blue-600 flex-col items-center justify-around  transition-transform transform  duration-500 ease-in-out ${burger ? "translate-x-0" : "-translate-x-[-160px]}'
           }
         >
           <div
