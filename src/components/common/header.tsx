@@ -3,6 +3,8 @@ import { Bebas_Neue, Comfortaa } from "next/font/google";
 import Link from "next/link";
 import "@/styles/globals.css";
 
+import { useState } from "react";
+
 const bebas = Bebas_Neue({
   weight: ["400"],
   display: "swap",
@@ -15,43 +17,127 @@ const comfortaa = Comfortaa({
 });
 
 export default function Header() {
+  const [burger, setBurger] = useState(false);
+
+  function handleopenburger() {
+    setBurger(true);
+  }
+  function handlecloseburger() {
+    setBurger(false);
+  }
   return (
-    <header className="mx-auto bg-black flex items-center justify-center ">
-      <div className=" w-full flex justify-around items-center pt-[30px] flex-row">
+    <header className="mx-auto bg-blue bg-blue-600 flex items-center justify-center ">
+      <div className=" w-full h-[80px] flex justify-around items-center flex-row">
         <div>
           <Link
             href="/"
-            className={`${bebas.className} text-[32px] text-white `}
+            className={`${bebas.className} m-0 text-[24px] lg:text-[32px] text-white hover:text-blue-900 duration-500`}
           >
             Horse and Travel
           </Link>
         </div>
-        <div className="flex flex-row items-center justify-around w-[30%]">
-          <div className="flex flex-col items-center justify-center">
+        <div className=" hidden lg:flex flex-row items-center justify-around gap-[5px] ">
+          <div className="flex flex-col items-center justify-center cursor-pointer hover:bg-blue-400 px-[30px] py-12px] rounded-[18px] ">
             <i className="fi fi-rr-home text-white"></i>
-            <h1 className={`${comfortaa.className} text-white`}>Главная </h1>
+            <h1 className={`${comfortaa.className} text-white`}>Главная</h1>
           </div>
-          <div className="flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center justify-center cursor-pointer hover:bg-blue-400 px-[30px] py-12px] rounded-[18px]">
             <i className="fi fi-rr-users-alt text-white"></i>
             <h1 className={`${comfortaa.className} text-white`}>О нас</h1>
           </div>
-          <div className="flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center justify-center cursor-pointer hover:bg-blue-400 px-[30px] py-12px] rounded-[18px]">
             <i className="fi fi-rr-edit text-white"></i>
             <h1 className={`${comfortaa.className} text-white`}>Отзыв</h1>
           </div>
         </div>
-        <div className="w-[20%] flex flex-row">
-          <div className="flex px-[20px] ">
-            <i className="fi fi-rr-globe text-white"></i>
-            <h1 className={`${comfortaa.className} text-white`}>RU</h1>
+        <div className="hidden lg:flex flex-row ">
+          <div className="flex px-[20px] flex-row items-center py-[8px] cursor-pointer text-center bg-white text-blue-400 rounded-[18px] hover:bg-blue-400 hover:text-white duration-500">
+            <i className="fi fi-rr-globe  "></i>
+            <h1 className={`${comfortaa.className}text-blue-400 ml-[20px]  `}>
+              RU
+            </h1>
           </div>
-          <div>
-            <Link href="/" className={`${comfortaa.className} text-white`}>
-              Вход
+          <div className="ml-[10px]">
+            <Link
+              href="/"
+              className={`${comfortaa.className} lg:block px-[22px] py-[8px] text-center bg-white text-blue-400 rounded-[18px] hover:bg-blue-400 hover:text-white duration-500`}
+            >
+              ВХОД
             </Link>
           </div>
         </div>
+        <div className="flex-block lg:hidden">
+          <div
+            className="lhidden w-[25px] h-[25px] flex flex-col justify-between"
+            onClick={handleopenburger}
+          >
+            <div className="w-full h-[4px] bg-white"></div>
+            <div className="w-full h-[4px] bg-white"></div>
+            <div className="w-full h-[4px] bg-white"></div>
+          </div>
+        </div>
       </div>
+      {burger && (
+        <div
+          className={
+            'bottom-0 w-[160px] h-[91vh] fixed left-0 bg-blue-600 flex-col items-center justify-around  transition-transform transform  duration-500 ease-in-out ${burger ? "translate-x-0" : "-translate-x-[-160px]}'
+          }
+        >
+          <div
+            onClick={handlecloseburger}
+            className="text-[24px] text-white absolute right-[50%] transform translate-x-1/2 top-[10px]"
+          >
+            <i className="fi fi-rr-cross"></i>
+          </div>
+          <div className="pt-[50%]">
+            <div className="h-[200px]  flex flex-col items-center justify-around">
+              <div className="flex flex-row items-center justify-center">
+                <i className="fi fi-rr-home text-white"></i>
+                <Link
+                  href="/"
+                  className={`${comfortaa.className} text-white mx-[15px]`}
+                >
+                  Главная
+                </Link>
+              </div>
+              <div className="flex flex-row items-center justify-center">
+                <i className="fi fi-rr-users-alt text-white"></i>
+                <Link
+                  href="/"
+                  className={`${comfortaa.className} text-white mx-[15px]`}
+                >
+                  О нас
+                </Link>
+              </div>
+              <div className="flex flex-row items-center justify-center">
+                <i className="fi fi-rr-edit text-white"></i>
+                <Link
+                  href="/"
+                  className={`${comfortaa.className} text-white mx-[15px]`}
+                >
+                  Отзыв
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="pt-[20px] h-[150px]  flex flex-col items-center justify-around ">
+            <div className="flex px-[20px] flex-row items-center  ">
+              <i className="fi fi-rr-globe text-white"></i>
+              <h1 className={`${comfortaa.className} text-white px-[20px]`}>
+                RU
+              </h1>
+            </div>
+            <div>
+              <Link
+                href="/"
+                className={`${comfortaa.className} lg:block text-white`}
+              >
+                ВХОД
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
