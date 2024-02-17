@@ -19,7 +19,7 @@ export default function PromoHome() {
           className="w-full lg:max-h-[760px] md:max-h-[560px] max-h-[360px]"
           alt="/"
         />
-        <div className="absolute top-0 sm:top-[20%] left-[50%] lg:top-[50%] lg:left-[50%] w-full transform translate-x-[-50%] -translate-y-[-50%] lg:translate-x-[-50%] lg:-translate-y-[-50%]  flex flex-col justify-evenly  items-center">
+        <div className="absolute top-0 sm:top-[20%] left-[50%] lg:top-[40%] lg:left-[50%] w-full transform translate-x-[-50%] -translate-y-[-50%] lg:translate-x-[-50%] lg:-translate-y-[-50%]  flex flex-col justify-evenly  items-center">
           <h1
             className={`${comfortaa.className} sm:text-[36px] text-[18px] text-white cursor-default pb-[20px]`}
           >

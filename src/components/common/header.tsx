@@ -26,26 +26,26 @@ export default function Header() {
     setBurger(false);
   }
   return (
-    <header className="mx-auto bg-blue  flex items-center justify-center ">
+    <header className="mx-auto bg-blue-600  flex items-center justify-center ">
       <div className=" w-full h-[80px] flex justify-around items-center flex-row">
         <div>
           <Link
             href="/"
-            className={`${bebas.className} m-0 text-[24px] lg:text-[32px] text-blue-600 hover:text-blue-900 duration-500`}
+            className={`${bebas.className} m-0 text-[24px] lg:text-[32px] text-white hover:text-blue-900 duration-500`}
           >
             Horse and Travel
           </Link>
         </div>
         <div className=" hidden lg:flex flex-row items-center justify-around gap-[5px] ">
-          <div className="flex flex-col items-center text-blue-600 justify-center cursor-pointer hover:bg-blue-400 hover:text-white px-[30px] py-12px] rounded-[18px] ">
+          <div className="flex flex-col items-center text-white justify-center cursor-pointer hover:bg-white hover:text-blue-600 duration-500 px-[30px] py-12px] rounded-[18px] ">
             <i className="fi fi-rr-home "></i>
             <h1 className={`${comfortaa.className} `}>Главная</h1>
           </div>
-          <div className="flex flex-col items-center  text-blue-600 justify-center cursor-pointer hover:bg-blue-400 hover:text-white px-[30px] py-12px] rounded-[18px]">
+          <div className="flex flex-col items-center  text-white justify-center cursor-pointer hover:bg-white hover:text-blue-600 duration-500 px-[30px] py-12px] rounded-[18px]">
             <i className="fi fi-rr-users-alt "></i>
             <h1 className={`${comfortaa.className} `}>О нас</h1>
           </div>
-          <div className="flex flex-col items-center text-blue-600 justify-center cursor-pointer hover:bg-blue-400 hover:text-white px-[30px] py-12px] rounded-[18px]">
+          <div className="flex flex-col items-center text-white justify-center cursor-pointer hover:bg-white hover:text-blue-600 duration-500 px-[30px] py-12px] rounded-[18px]">
             <i className="fi fi-rr-edit "></i>
             <h1 className={`${comfortaa.className} `}>Отзыв</h1>
           </div>
