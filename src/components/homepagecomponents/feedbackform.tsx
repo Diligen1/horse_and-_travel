@@ -17,7 +17,7 @@ const roboto = Roboto({
 });
 export default function FeedbackForm() {
   return (
-    <main className="mx-auto " id="FeedbackForm">
+    <main className="mx-auto ">
       <div className="w-full flex relative flex-col lg:flex-row justify-center items-center">
         <div className=" w-full lg:w-[50%] h-[300px] relative bg-orange-300">
           <Image

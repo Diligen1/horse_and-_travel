@@ -28,7 +28,7 @@ export default function PromoHome() {
             Horse and Travel
           </h1>
           <Link
-            href="/#FeedbackForm"
+            href="/#gallery"
             className={`${comfortaa.className} sm:px-[30px] px-[20px] py-[10px] rounded-[8px] bg-blue-600 text-white`}
           >
             set gallery
