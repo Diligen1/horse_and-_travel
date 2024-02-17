@@ -1,9 +1,8 @@
-import { Header } from "@/components";
-
+import { PromoHome } from "@/components";
 export default function Home() {
   return (
     <main>
-      <Header />
+      <PromoHome />
     </main>
   );
 }

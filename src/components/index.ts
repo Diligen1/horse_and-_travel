@@ -1,2 +1,3 @@
 import Header from "./common/header";
-export { Header };
+import PromoHome from "./homepagecomponents/promoHome";
+export { Header, PromoHome };
