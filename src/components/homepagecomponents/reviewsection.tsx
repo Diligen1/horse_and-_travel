@@ -54,9 +54,11 @@ export default function ReviewsSection() {
 
   return (
     <main className="mx-auto">
-      <div className="w-full h-[500px] flex flex-col bg-white justify-center items-center">
-        <div className="pb-[40px]">
-          <h1 className={` ${comfortaa.className} text-[42px] text-blue-600`}>
+      <div className="w-full h-[400px]  lg:h-[500px] flex flex-col bg-white justify-center items-center">
+        <div className="pb-[20px] lg:pb-[40px]">
+          <h1
+            className={` ${comfortaa.className} text-[18px] text-blue-600 lg:text-[36px]`}
+          >
             REVIEW
           </h1>
         </div>
@@ -69,7 +71,7 @@ export default function ReviewsSection() {
               slidesPerView: 2,
             },
           }}
-          className="h-[280px] lg:h-[350px] w-[95%] rounded-[32px]  "
+          className="h-[300px] lg:h-[350px] w-[95%] rounded-[32px]  "
         >
           {reviewDate.map((el) => (
             <SwiperSlide key={el.id}>
@@ -85,7 +87,7 @@ export default function ReviewsSection() {
                   </div>
                   <div className="w-[70%] flex flex-col justify-center gap-[10px]">
                     <h1
-                      className={`${roboto.className} text-[24px] pr-[260px] text-white`}
+                      className={`${roboto.className} leading-[130%] text-[24px] pr-[260px] text-white`}
                     >
                       {el.name}
                     </h1>
@@ -96,8 +98,8 @@ export default function ReviewsSection() {
                     </h3>
                   </div>
                 </div>
-                <div className="w-full h-[50%]">
-                  <h2 className="p-[10px] text-white">{el.text}</h2>
+                <div className="w-full h-[60%] lg:h-[50%]">
+                  <h2 className="px-[20px] text-white">{el.text}</h2>
                 </div>
               </div>
             </SwiperSlide>

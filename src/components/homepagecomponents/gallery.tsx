@@ -52,10 +52,10 @@ export default function Gallery() {
 
   return (
     <main className="mx-auto " id="gallery">
-      <div className="w-full pb-[80px] relative border-blue-600 bg-white border-b-[2px] ">
+      <div className="w-full pb-[20px] lg:pb-[80px]z relative border-blue-600 bg-white border-b-[2px] ">
         <div className="text-center py-[20px]">
           <h1
-            className={` ${comfortaa.className} text-[24px] text-blue-600 lg:text-[36px]`}
+            className={` ${comfortaa.className} text-[18px] text-blue-600 lg:text-[36px]`}
           >
             GALLERY
           </h1>
@@ -74,12 +74,12 @@ export default function Gallery() {
           ))}
         </div>
         {modalopen && (
-          <div className="w-[100%] h-[100vh] lg:w-[38%] lg:h-[90vh] bg-blue-700 z-10 top-[50%] left-[50%] transform translate-x-[-50%] translate-y-[-50%] fixed flex-row justify-center items-center">
+          <div className="w-[100%] h-[100vh] lg:w-[38%] lg:h-[90vh] bg-blue-700 z-30 top-[50%] left-[50%] transform translate-x-[-50%] translate-y-[-50%] fixed flex-row justify-center items-center">
             <div
               onClick={handlemodelclose}
-              className="text-[24px] text-white absolute z-20 right-[30px] cursor-pointer transform translate-x-1/2 top-[10px]"
+              className="text-[24px] text-white absolute z-40 right-[30px] cursor-pointer transform translate-x-1/2 top-[10px]"
             >
-              <i className="fi fi-rr-cross lg:text-[18px] text-[14px]"></i>
+              <i className="fi fi-rr-cross  text-[20px]"></i>
             </div>
             <Swiper
               pagination={{ clickable: true }}

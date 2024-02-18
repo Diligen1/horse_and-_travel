@@ -4,6 +4,7 @@ import {
   Gallery,
   MapsSection,
   ReviewsSection,
+  FooterSection,
 } from "@/components";
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Gallery />
       <ReviewsSection />
       <MapsSection />
+      <FooterSection />
     </main>
   );
 }
