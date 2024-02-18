@@ -2,11 +2,18 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Comfortaa } from "next/font/google";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+
+const comfortaa = Comfortaa({
+  weight: ["400"],
+  display: "swap",
+  subsets: ["cyrillic"],
+});
 
 export default function Gallery() {
   const [modalopen, setModelopen] = useState(false);
@@ -45,9 +52,13 @@ export default function Gallery() {
 
   return (
     <main className="mx-auto " id="gallery">
-      <div className="w-full pb-[20px] relative bg-blue-600">
+      <div className="w-full pb-[80px] relative border-blue-600 bg-white border-b-[2px] ">
         <div className="text-center py-[20px]">
-          <h1 className=" text-[24px] text-white lg:text-[36px]">GALLERY</h1>
+          <h1
+            className={` ${comfortaa.className} text-[24px] text-blue-600 lg:text-[36px]`}
+          >
+            GALLERY
+          </h1>
         </div>
         <div className="w-full flex flex-wrap  justify-center items-center">
           {imageData.map((el) => (
