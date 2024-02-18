@@ -68,24 +68,24 @@ export default function Header() {
         </div>
         <div className="flex-block lg:hidden">
           <div
-            className="lhidden w-[25px] h-[25px] flex flex-col justify-between"
+            className="lhidden w-[20px] h-[16px] flex flex-col justify-between"
             onClick={handleopenburger}
           >
-            <div className="w-full h-[4px] bg-white"></div>
-            <div className="w-full h-[4px] bg-white"></div>
-            <div className="w-full h-[4px] bg-white"></div>
+            <div className="w-full h-[2px] bg-white"></div>
+            <div className="w-full h-[2px] bg-white"></div>
+            <div className="w-full h-[2px] bg-white"></div>
           </div>
         </div>
       </div>
       {burger && (
         <div
           className={
-            'bottom-0 w-[140px] sm:w-[180px] h-[100vh] z-10 fixed left-0 bg-blue-600 flex-col items-center justify-around  transition-transform transform  duration-500 ease-in-out ${burger ? "translate-x-0" : "-translate-x-[-160px]}'
+            'bottom-0 w-[180px] sm:w-[200px] h-[100vh] z-10 fixed left-0 bg-blue-600 flex-col items-center justify-around  transition-transform transform  duration-500 ease-in-out ${burger ? "translate-x-0" : "-translate-x-[-160px]}'
           }
         >
           <div
             onClick={handlecloseburger}
-            className="text-[18px] text-white absolute right-[50%] transform translate-x-1/2 top-[60px]"
+            className="text-[18px] text-white absolute right-[50%] transform translate-x-1/2 top-[30px]"
           >
             <i className="fi fi-rr-cross"></i>
           </div>
