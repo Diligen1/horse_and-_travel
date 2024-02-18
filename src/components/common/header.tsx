@@ -26,8 +26,8 @@ export default function Header() {
     setBurger(false);
   }
   return (
-    <header className="mx-auto bg-blue-600  flex items-center justify-center ">
-      <div className=" w-full h-[80px] flex justify-around items-center flex-row">
+    <header className="mx-auto   flex items-center justify-center ">
+      <div className=" w-full h-[80px] lg:fixed  bg-blue-600 z-40 top-0 flex justify-around items-center flex-row">
         <div>
           <Link
             href="/"
@@ -80,12 +80,12 @@ export default function Header() {
       {burger && (
         <div
           className={
-            'bottom-0 w-[180px] sm:w-[200px] h-[100vh] z-10 fixed left-0 bg-blue-600 flex-col items-center justify-around  transition-transform transform  duration-500 ease-in-out ${burger ? "translate-x-0" : "-translate-x-[-160px]}'
+            'bottom-0 w-[180px] sm:w-[200px] h-[100vh] z-10 fixed left-0 bg-blue-800 flex-col items-center justify-around  transition-transform transform  duration-500 ease-in-out ${burger ? "translate-x-0" : "-translate-x-[-160px]}'
           }
         >
           <div
             onClick={handlecloseburger}
-            className="text-[18px] text-white absolute right-[50%] transform translate-x-1/2 top-[30px]"
+            className="text-[18px] text-white absolute right-[50%] transform translate-x-1/2 top-[100px]"
           >
             <i className="fi fi-rr-cross"></i>
           </div>

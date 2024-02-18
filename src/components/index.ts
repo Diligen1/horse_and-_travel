@@ -4,6 +4,7 @@ import FeedbackForm from "./homepagecomponents/feedbackform";
 import Gallery from "@/components/homepagecomponents/gallery";
 import MapsSection from "@/components/homepagecomponents/mapssection";
 import ReviewsSection from "./homepagecomponents/reviewsection";
+import FooterSection from "./common/footer";
 export {
   Header,
   PromoHome,
@@ -11,4 +12,5 @@ export {
   Gallery,
   MapsSection,
   ReviewsSection,
+  FooterSection,
 };

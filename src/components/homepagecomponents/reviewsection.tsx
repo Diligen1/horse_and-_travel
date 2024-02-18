@@ -69,7 +69,7 @@ export default function ReviewsSection() {
               slidesPerView: 2,
             },
           }}
-          className="h-[350px] w-[95%] rounded-[32px]  "
+          className="h-[280px] lg:h-[350px] w-[95%] rounded-[32px]  "
         >
           {reviewDate.map((el) => (
             <SwiperSlide key={el.id}>
