@@ -138,7 +138,7 @@ export default function Header() {
             </div>
             <div>
               <Link
-                href="/"
+                href="/register"
                 className={`${comfortaa.className} lg:block text-white`}
               >
                 ВХОД
