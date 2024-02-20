@@ -2,6 +2,7 @@
 import { Bebas_Neue, Comfortaa } from "next/font/google";
 import Link from "next/link";
 import "@/styles/globals.css";
+import { motion } from "framer-motion";
 
 import { useState } from "react";
 
@@ -17,17 +18,23 @@ const comfortaa = Comfortaa({
 });
 
 export default function Header() {
+  const [isActive, setIsActive] = useState(false);
+  const [isClose, setIsClose] = useState(true);
   const [burger, setBurger] = useState(false);
 
   function handleopenburger() {
+    setIsActive(true);
     setBurger(true);
   }
   function handlecloseburger() {
+    setIsClose(true);
     setBurger(false);
   }
   return (
     <header className="mx-auto   flex items-center justify-center ">
-      <div className=" w-full h-[80px] lg:fixed  bg-blue-600 z-10 top-0 flex justify-around items-center flex-row">
+      <div
+        className={` w-full h-[80px] lg:fixed bg-blue-600 z-10 top-0 flex justify-around items-center flex-row `}
+      >
         <div>
           <Link
             href="/"
@@ -50,7 +57,7 @@ export default function Header() {
             <h1 className={`${comfortaa.className} `}>Отзыв</h1>
           </div>
         </div>
-        <div className="hidden lg:flex flex-row ">
+        <div className={`hidden lg:flex flex-row `}>
           <div className="flex px-[20px] flex-row items-center py-[8px] cursor-pointer text-center bg-white text-blue-400 rounded-[18px] hover:bg-blue-400 hover:text-white duration-500">
             <i className="fi fi-rr-globe  "></i>
             <h1 className={`${comfortaa.className}text-blue-400 ml-[20px]  `}>
@@ -59,7 +66,7 @@ export default function Header() {
           </div>
           <div className="ml-[10px]">
             <Link
-              href="/"
+              href="/register"
               className={`${comfortaa.className} lg:block px-[22px] py-[8px] text-center bg-white text-blue-400 rounded-[18px] hover:bg-blue-400 hover:text-white duration-500`}
             >
               ВХОД
@@ -78,10 +85,12 @@ export default function Header() {
         </div>
       </div>
       {burger && (
-        <div
-          className={
-            'bottom-0 w-[180px] sm:w-[200px] h-[100vh] z-50 fixed left-0 bg-blue-800 flex-col items-center justify-around  transition-transform transform  duration-500 ease-in-out ${burger ? "translate-x-0" : "-translate-x-[-160px]}'
-          }
+        <motion.div
+          initial={{ left: -200 }}
+          animate={{ left: isActive ? 0 : -100 }}
+          exit={{ left: isClose ? 0 : -100 }}
+          transition={{ duration: "0.5" }}
+          className={`bottom-0 w-[180px] sm:w-[200px] h-[100vh] z-50 fixed left-0 bg-blue-800 flex-col items-center justify-around  `}
         >
           <div
             onClick={handlecloseburger}
@@ -136,7 +145,7 @@ export default function Header() {
               </Link>
             </div>
           </div>
-        </div>
+        </motion.div>
       )}
     </header>
   );

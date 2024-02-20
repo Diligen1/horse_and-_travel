@@ -5,6 +5,7 @@ import Gallery from "@/components/homepagecomponents/gallery";
 import MapsSection from "@/components/homepagecomponents/mapssection";
 import ReviewsSection from "./homepagecomponents/reviewsection";
 import FooterSection from "./common/footer";
+import RegisterComponents from "./registerpagecomponents/register";
 export {
   Header,
   PromoHome,
@@ -13,4 +14,5 @@ export {
   MapsSection,
   ReviewsSection,
   FooterSection,
+  RegisterComponents,
 };
