@@ -81,7 +81,7 @@ export default function RegisterComponents() {
             <div
               className={` ${style.right_block} ${
                 isActive ? style.active : ""
-              } w-[50%] h-[100%] flex flex-col justify-center items-center bg-white`}
+              } w-[50%] h-[100%] hidden md:flex flex-col justify-center items-center bg-white`}
             >
               <div className="h-[100px] gap-[10px] flex flex-col  items-center">
                 <h1
@@ -121,12 +121,12 @@ export default function RegisterComponents() {
             <div
               className={`${style.block} ${
                 isActive ? style.active : ""
-              } w-[50%] h-[100%] bg-blue-600 `}
+              } w-[50%] h-[100%] bg-blue-600 hidden md:flex`}
             ></div>
             <div
               className={`${style.left_contain} ${
                 isActive ? style.active : ""
-              } w-[50%] h-[100%] flex flex-col justify-center items-center`}
+              } w-[50%] h-[100%] hidden md:flex flex-col justify-center items-center`}
             >
               <p
                 className={`absolute top-[10px] left-[10px] text-[22px] text-white ${bebas.className}`}
@@ -151,7 +151,7 @@ export default function RegisterComponents() {
             <div
               className={`${style.right_contain} ${
                 isActive ? style.active : ""
-              } w-[50%] h-[100%] flex flex-col justify-center items-center`}
+              } w-[50%] h-[100%] hidden md:flex flex-col justify-center items-center`}
             >
               <p
                 className={`absolute top-[10px] right-[10px] text-[22px] text-white ${bebas.className}`}

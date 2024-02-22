@@ -44,18 +44,24 @@ export default function Header() {
           </Link>
         </div>
         <div className=" hidden lg:flex flex-row items-center justify-around gap-[5px] ">
-          <div className="flex flex-col items-center text-white justify-center cursor-pointer hover:bg-white hover:text-blue-600 duration-500 px-[30px] py-12px] rounded-[18px] ">
+          <Link
+            href="/"
+            className="flex flex-col items-center text-white justify-center cursor-pointer hover:bg-white hover:text-blue-600 duration-500 px-[30px] py-12px] rounded-[18px] "
+          >
             <i className="fi fi-rr-home "></i>
             <h1 className={`${comfortaa.className} `}>Главная</h1>
-          </div>
+          </Link>
           <div className="flex flex-col items-center  text-white justify-center cursor-pointer hover:bg-white hover:text-blue-600 duration-500 px-[30px] py-12px] rounded-[18px]">
             <i className="fi fi-rr-users-alt "></i>
             <h1 className={`${comfortaa.className} `}>О нас</h1>
           </div>
-          <div className="flex flex-col items-center text-white justify-center cursor-pointer hover:bg-white hover:text-blue-600 duration-500 px-[30px] py-12px] rounded-[18px]">
+          <Link
+            href="/review"
+            className="flex flex-col items-center text-white justify-center cursor-pointer hover:bg-white hover:text-blue-600 duration-500 px-[30px] py-12px] rounded-[18px]"
+          >
             <i className="fi fi-rr-edit "></i>
             <h1 className={`${comfortaa.className} `}>Отзыв</h1>
-          </div>
+          </Link>
         </div>
         <div className={`hidden lg:flex flex-row `}>
           <div className="flex px-[20px] flex-row items-center py-[8px] cursor-pointer text-center bg-white text-blue-400 rounded-[18px] hover:bg-blue-400 hover:text-white duration-500">

@@ -6,6 +6,7 @@ import MapsSection from "@/components/homepagecomponents/mapssection";
 import ReviewsSection from "./homepagecomponents/reviewsection";
 import FooterSection from "./common/footer";
 import RegisterComponents from "./registerpagecomponents/register";
+import ReviewsComponents from "@/components/reviewspagecomponents/reviewssection";
 export {
   Header,
   PromoHome,
@@ -15,4 +16,5 @@ export {
   ReviewsSection,
   FooterSection,
   RegisterComponents,
+  ReviewsComponents,
 };
