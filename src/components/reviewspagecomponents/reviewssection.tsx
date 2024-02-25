@@ -17,14 +17,14 @@ export default function ReviewsComponents() {
     text: "",
   });
 
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    let imageUrl = null;
-    if (file && file.type.startsWith("image/")) {
-      imageUrl = URL.createObjectURL(file);
-      setSelectedImage(imageUrl);
-    }
-  };
+  // const handleImageChange = (e) => {
+  //   const file = e.target.files[0];
+  //   let imageUrl = null;
+  //   if (file && file.type.startsWith("image/")) {
+  //     imageUrl = URL.createObjectURL(file);
+  //     setSelectedImage(imageUrl);
+  //   }
+  // };
 
   return (
     <main className="mx-auto">
@@ -63,12 +63,7 @@ export default function ReviewsComponents() {
             </div>
           </div>
           <div className="w-[50%] flex flex-col pb-[20px] justify-center items-center ">
-            <input
-              type="file"
-              className="hidden"
-              onChange={handleImageChange}
-              id="fileInput"
-            />
+            <input type="file" className="hidden" id="fileInput" />
             <label
               htmlFor="fileInput"
               className="cursor-pointer w-[200px] text-white bg-blue-600 px-[40px] py-[10px] rounded-[16px]"
