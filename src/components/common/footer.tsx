@@ -1,5 +1,6 @@
 "use client";
 import { Roboto } from "next/font/google";
+import { useState, useEffect } from "react";
 const roboto = Roboto({
   weight: ["400", "500", "700"],
   display: "swap",
@@ -7,27 +8,58 @@ const roboto = Roboto({
 });
 
 export default function FooterSection() {
+  const [infoData, setInfoData] = useState<ImageData[]>([]);
+  class ImageData {
+    public id: number;
+    public number: number;
+    public email: string;
+    public adress: string;
+    constructor(info: ImageData) {
+      this.id = info.id;
+      this.number = info.number;
+      this.email = info.email;
+      this.adress = info.adress;
+    }
+  }
+  useEffect(() => {
+    async function InfoImage() {
+      try {
+        const response = await fetch("/api/footer");
+        const data = await response.json();
+        setInfoData(data[0].info);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    }
+    InfoImage();
+  }, []);
   return (
     <main className="mx-auto">
       <div className="w-full h-auto sm:h-[300px] bg-blue-600 flex flex-row justify-center sm:justify-around items-center">
-        <div className="p-[20px] w-full sm:w-auto flex flex-col justify-around items-start">
-          <h1
-            className={`${roboto.className} text-[18px] pb-[20px] text-white font-bold`}
+        {infoData.map((el) => (
+          <div
+            key={el.id}
+            className="p-[20px] w-full sm:w-auto flex flex-col justify-around items-start"
           >
-            Контакты
-          </h1>
-          <div className="h-[120px] flex flex-col justify-around items-start text-white">
-            <p className={`${roboto.className} text-[14px] sm:text-[14px]`}>
-              +996500500500
-            </p>
-            <p className={`${roboto.className} text-[14px] sm:text-[14px]`}>
-              muratbaevking.@gmail.com
-            </p>
-            <p className={`${roboto.className} text-[14px] sm:text-[14px]`}>
-              turusbekova 109/1
-            </p>
+            <h1
+              className={`${roboto.className} text-[18px] pb-[20px] text-white font-bold`}
+            >
+              Контакты
+            </h1>
+            <div className="h-[120px] flex flex-col justify-around items-start text-white">
+              <p className={`${roboto.className} text-[14px] sm:text-[14px]`}>
+                +996{el.number}
+              </p>
+              <p className={`${roboto.className} text-[14px] sm:text-[14px]`}>
+                {el.email}
+              </p>
+              <p className={`${roboto.className} text-[14px] sm:text-[14px]`}>
+                {el.adress}
+              </p>
+            </div>
           </div>
-        </div>
+        ))}
+
         <div className="p-[20px] w-full hidden  sm:w-auto sm:flex flex-col justify-between items-end sm:items-start">
           <h1
             className={`${roboto.className}text-[18px] pb-[20px] text-white font-bold`}

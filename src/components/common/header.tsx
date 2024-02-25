@@ -33,7 +33,7 @@ export default function Header() {
   return (
     <header className="mx-auto   flex items-center justify-center ">
       <div
-        className={` w-full h-[80px] lg:fixed bg-blue-600 z-10 top-0 flex justify-around items-center flex-row `}
+        className={` w-full h-[80px] lg:fixed bg-blue-600 z-20 top-0 flex justify-around items-center flex-row `}
       >
         <div>
           <Link

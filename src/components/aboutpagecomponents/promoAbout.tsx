@@ -20,7 +20,7 @@ export default function PromoAbout() {
           alt="#"
           priority
         />
-        <div className="absolute top-[50%] left-[50%] z-10 translate-x-[-50%] translate-y-[-50%]">
+        <div className="absolute top-[50%] left-[50%] z-[5] translate-x-[-50%] translate-y-[-50%]">
           <h1
             className={`sm:text-[36px] text-white  text-[18px] cursor-default text-center ${comfortaa.className}`}
           >

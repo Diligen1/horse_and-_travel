@@ -6,7 +6,7 @@ import MapsSection from "@/components/homepagecomponents/mapssection";
 import ReviewsSection from "./homepagecomponents/reviewsection";
 import FooterSection from "./common/footer";
 import RegisterComponents from "./registerpagecomponents/register";
-import ReviewsComponents from "@/components/reviewspagecomponents/reviewssection";
+import ReviewsComponents from "./reviewspagecomponents/reviewssection";
 import PromoAbout from "./aboutpagecomponents/promoAbout";
 export {
   Header,

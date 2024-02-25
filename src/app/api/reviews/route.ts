@@ -1,11 +1,12 @@
+import image from "@/assets/images/gallery/photo1705559289 (4).jpeg";
+import image_2 from "@/assets/images/gallery/photo1705559289 (5).jpeg";
+
 export async function GET() {
   const data = reviewsData();
   const headers = { "Content-Type": "application/json" };
   return new Response(JSON.stringify(data), { headers });
 }
 
-import image from "@/assets/images/gallery/photo1705559289 (4).jpeg";
-import image_2 from "@/assets/images/gallery/photo1705559289 (5).jpeg";
 function reviewsData() {
   return [
     {

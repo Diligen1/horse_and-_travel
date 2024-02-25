@@ -1,9 +1,12 @@
 "use client";
+import MyMap from "../common/myMap";
 
 export default function MapsSection() {
   return (
-    <main>
-      <main id="map" style={{ width: "100%", height: "400px" }} />;
+    <main className="mx-auto">
+      <div className="w-[100%] h-[450px] flex justify-center items-center">
+        <MyMap />
+      </div>
     </main>
   );
 }
