@@ -51,10 +51,13 @@ export default function Header() {
             <i className="fi fi-rr-home "></i>
             <h1 className={`${comfortaa.className} `}>Главная</h1>
           </Link>
-          <div className="flex flex-col items-center  text-white justify-center cursor-pointer hover:bg-white hover:text-blue-600 duration-500 px-[30px] py-12px] rounded-[18px]">
+          <Link
+            href="/about"
+            className="flex flex-col items-center  text-white justify-center cursor-pointer hover:bg-white hover:text-blue-600 duration-500 px-[30px] py-12px] rounded-[18px]"
+          >
             <i className="fi fi-rr-users-alt "></i>
             <h1 className={`${comfortaa.className} `}>О нас</h1>
-          </div>
+          </Link>
           <Link
             href="/review"
             className="flex flex-col items-center text-white justify-center cursor-pointer hover:bg-white hover:text-blue-600 duration-500 px-[30px] py-12px] rounded-[18px]"
@@ -127,7 +130,7 @@ export default function Header() {
               <div className="flex flex-row items-center justify-center">
                 <i className="fi fi-rr-edit text-white"></i>
                 <Link
-                  href="/"
+                  href="/review"
                   className={`${comfortaa.className} text-white mx-[15px]`}
                 >
                   Отзыв
