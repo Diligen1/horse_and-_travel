@@ -32,18 +32,6 @@ export default function FeedbackForm() {
     }
   }
 
-  const info = [
-    {
-      id: 1,
-      color: "bg-orange-300",
-      text: "text-violet-700",
-    },
-    {
-      id: 1,
-      color: "text-violet-700",
-      text: "bg-orange-300",
-    },
-  ];
   useEffect(() => {
     async function ColImage() {
       try {
@@ -85,7 +73,7 @@ export default function FeedbackForm() {
                 {el.text}
               </p>
               <Link
-                href="/"
+                href="/about"
                 className={`${roboto.className} w-[180px] px-[15px] py-[10px] bg-white text-center text-blue-600 rounded-[16px]`}
               >
                 get ready

@@ -1,6 +1,7 @@
 "use client";
 import { Roboto } from "next/font/google";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 const roboto = Roboto({
   weight: ["400", "500", "700"],
   display: "swap",
@@ -67,9 +68,24 @@ export default function FooterSection() {
             Навигационная панель
           </h1>
           <div className="h-[120px] flex flex-col justify-around items-end sm:items-start text-white">
-            <p className={`${roboto.className}  text-[14px]`}>Главная</p>
-            <p className={`${roboto.className}  text-[14px]`}>Отзыв</p>
-            <p className={`${roboto.className} text-[14px]`}>О нас</p>
+            <Link
+              href="/"
+              className={`${roboto.className} hover:text-blue-800 duration-200 text-[14px]`}
+            >
+              Главная
+            </Link>
+            <Link
+              href="/review"
+              className={`${roboto.className} hover:text-blue-800 duration-200 text-[14px]`}
+            >
+              Отзыв
+            </Link>
+            <Link
+              href="/about"
+              className={`${roboto.className} hover:text-blue-800 duration-200 text-[14px]`}
+            >
+              О нас
+            </Link>
           </div>
         </div>
         <div className="p-[20px] flex flex-col justify-between items-start">

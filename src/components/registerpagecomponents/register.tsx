@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import style from "@/styles/register.module.css";
 import Link from "next/link";
 import { Roboto, Bebas_Neue } from "next/font/google";
@@ -16,7 +16,72 @@ const bebas = Bebas_Neue({
 });
 export default function RegisterComponents() {
   const [isActive, setIsActive] = useState(false);
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
 
+  const registerHandle = async () => {
+    if (
+      formData.username.trim() === "" ||
+      formData.email.trim() === "" ||
+      formData.password.trim() === "" ||
+      formData.confirmPassword.trim() === ""
+    ) {
+      alert("Заполните все поля ввода");
+    } else {
+      try {
+        const response = await fetch(
+          "http://52.59.220.58/users/users_register_user_create",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          }
+        );
+        const data = await response.json();
+        if (data.success) {
+          window.location.href = "/";
+        } else {
+          alert("неверные учетные данные");
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  };
+
+  const authorHandle = async () => {
+    try {
+      const response = await fetch(
+        "http://52.59.220.58/#/users/users_login_user_create",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: formData.email,
+            password: formData.password,
+          }),
+        }
+      );
+      const data = await response.json();
+      if (data.success) {
+        window.location.href = "/";
+        return data.user;
+      } else {
+        throw new Error("Ошибка Авторизации");
+      }
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  };
   const handleButtonClick = () => {
     setIsActive(!isActive);
   };
@@ -48,27 +113,49 @@ export default function RegisterComponents() {
               <div className="flex flex-col h-[40%] justify-evenly items-center">
                 <input
                   type="text"
+                  value={formData.username}
+                  onChange={(e) =>
+                    setFormData({ ...formData, username: e.target.value })
+                  }
                   placeholder="Введите имя"
                   className={`bg-blue-300 text-blue-600 w-[280px] outline-none text-[12px] px-[10px] py-[8px] ${style.input}`}
                 />
                 <input
                   type="text"
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
                   placeholder="Введите Email"
                   className={`bg-blue-300 text-blue-600 w-[280px] outline-none text-[12px] px-[10px] py-[8px] ${style.input} `}
                 />
                 <input
-                  type="number"
+                  type="text"
+                  value={formData.password}
+                  onChange={(e) =>
+                    setFormData({ ...formData, password: e.target.value })
+                  }
                   placeholder="Введите пароль"
                   className={`bg-blue-300 text-blue-600 w-[280px] outline-none text-[12px] px-[10px] py-[8px] ${style.input}`}
                 />
                 <input
-                  type="number"
+                  type="text"
+                  value={formData.confirmPassword}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      confirmPassword: e.target.value,
+                    })
+                  }
                   placeholder="Повторите пароль"
                   className={`bg-blue-300 text-blue-600 w-[280px] outline-none text-[12px] px-[10px] py-[8px] ${style.input} `}
                 />
               </div>
               <div className="pt-[20px]">
-                <button className=" text-[14px] px-[50px] py-[8px] rounded-[32px] bg-blue-600 text-white ">
+                <button
+                  onClick={registerHandle}
+                  className=" text-[14px] px-[50px] py-[8px] rounded-[32px] bg-blue-600 text-white "
+                >
                   ВХОД
                 </button>
               </div>
@@ -98,17 +185,28 @@ export default function RegisterComponents() {
               <div className="flex flex-col h-[40%] justify-center gap-[30px] items-center">
                 <input
                   type="text"
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
                   placeholder="Введите Email"
                   className={`bg-blue-300 text-blue-600 w-[280px] outline-none text-[12px] px-[10px] py-[8px] ${style.input} `}
                 />
                 <input
-                  type="number"
+                  type="text"
+                  value={formData.password}
+                  onChange={(e) =>
+                    setFormData({ ...formData, password: e.target.value })
+                  }
                   placeholder="Введите пароль"
                   className={`bg-blue-300 text-blue-600 w-[280px] outline-none text-[12px] px-[10px] py-[8px] ${style.input}`}
                 />
               </div>
               <div className="pt-[20px]">
-                <button className=" text-[14px] px-[50px] py-[8px] rounded-[32px] bg-blue-600 text-white ">
+                <button
+                  onClick={authorHandle}
+                  className=" text-[14px] px-[50px] py-[8px] rounded-[32px] bg-blue-600 text-white "
+                >
                   ВХОД
                 </button>
               </div>

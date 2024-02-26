@@ -67,12 +67,6 @@ export default function Header() {
           </Link>
         </div>
         <div className={`hidden lg:flex flex-row `}>
-          <div className="flex px-[20px] flex-row items-center py-[8px] cursor-pointer text-center bg-white text-blue-400 rounded-[18px] hover:bg-blue-400 hover:text-white duration-500">
-            <i className="fi fi-rr-globe  "></i>
-            <h1 className={`${comfortaa.className}text-blue-400 ml-[20px]  `}>
-              RU
-            </h1>
-          </div>
           <div className="ml-[10px]">
             <Link
               href="/register"
@@ -139,12 +133,6 @@ export default function Header() {
             </div>
           </div>
           <div className="pt-[20px] h-[150px]  flex flex-col items-center justify-around ">
-            <div className="flex px-[20px] flex-row items-center  ">
-              <i className="fi fi-rr-globe text-white"></i>
-              <h1 className={`${comfortaa.className} text-white px-[20px]`}>
-                RU
-              </h1>
-            </div>
             <div>
               <Link
                 href="/register"
