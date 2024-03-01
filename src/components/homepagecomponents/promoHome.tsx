@@ -10,38 +10,40 @@ const comfortaa = Comfortaa({
   subsets: ["latin"],
 });
 export default function PromoHome() {
-  const [promoData, setPromoData] = useState<promoHomeData[]>([]);
+  const [promoData, setPromoDate] = useState<imageCol[]>([]);
 
-  class promoHomeData {
+  class imageCol {
     public id: number;
-    public imge: string;
-    constructor(img: promoHomeData) {
-      this.id = img.id;
-      this.imge = img.imge;
+    public img: string;
+    constructor(image: imageCol) {
+      this.id = image.id;
+      this.img = image.img;
     }
   }
+
   useEffect(() => {
     async function ColImage() {
       try {
-        const response = await fetch("/api/promoAbout");
+        const response = await fetch("/api/promoHome");
         const data = await response.json();
-        setPromoData(data[0].images);
+        setPromoDate(data[0].image);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     }
     ColImage();
   }, []);
+
   return (
     <main className="mx-auto ">
       <Header />
       {promoData.map((el) => (
         <div
           key={el.id}
-          className="w-full relative  flex justify-center items-start"
+          className="w-full relative lg:max-h-[760px] flex justify-center items-start"
         >
           <Image
-            src={el.imge}
+            src={el.img}
             className="w-full lg:max-h-[760px] md:max-h-[560px] max-h-[360px]"
             alt="#"
             priority

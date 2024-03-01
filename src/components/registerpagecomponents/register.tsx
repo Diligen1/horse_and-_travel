@@ -34,7 +34,7 @@ export default function RegisterComponents() {
     } else {
       try {
         const response = await fetch(
-          "http://52.59.220.58/users/users_register_user_create",
+          "http://52.59.220.58/users/register/user/",
           {
             method: "POST",
             headers: {
@@ -57,19 +57,16 @@ export default function RegisterComponents() {
 
   const authorHandle = async () => {
     try {
-      const response = await fetch(
-        "http://52.59.220.58/#/users/users_login_user_create",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: formData.email,
-            password: formData.password,
-          }),
-        }
-      );
+      const response = await fetch("http://52.59.220.58/users/login/user/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: formData.email,
+          password: formData.password,
+        }),
+      });
       const data = await response.json();
       if (data.success) {
         window.location.href = "/";
