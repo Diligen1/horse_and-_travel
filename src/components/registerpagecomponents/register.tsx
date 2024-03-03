@@ -125,7 +125,7 @@ export default function RegisterComponents() {
                   onChange={(e) =>
                     setFormData({ ...formData, username: e.target.value })
                   }
-                  placeholder="Введите имя"
+                  placeholder="Введите Ф.И.О"
                   className={`bg-blue-300 text-blue-600 w-[280px] outline-none text-[12px] px-[10px] py-[8px] ${style.input}`}
                 />
                 <input
@@ -134,7 +134,7 @@ export default function RegisterComponents() {
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
-                  placeholder="Введите Email"
+                  placeholder="Введите email"
                   className={`bg-blue-300 text-blue-600 w-[280px] outline-none text-[12px] px-[10px] py-[8px] ${style.input} `}
                 />
                 <input
@@ -197,7 +197,7 @@ export default function RegisterComponents() {
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
-                  placeholder="Введите Email"
+                  placeholder="Введите email"
                   className={`bg-blue-300 text-blue-600 w-[280px] outline-none text-[12px] px-[10px] py-[8px] ${style.input} `}
                 />
                 <input

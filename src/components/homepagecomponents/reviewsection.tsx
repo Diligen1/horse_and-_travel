@@ -22,29 +22,27 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 export default function ReviewsSection() {
-  const [reviewDate, setReviewDate] = useState<reviewCol[]>([]);
-
-  class reviewCol {
-    public id: number;
-    public image: string;
-    public name: string;
-    public title: string;
-    public text: string;
-    constructor(review: reviewCol) {
-      (this.id = review.id),
-        (this.image = review.image),
-        (this.name = review.name),
-        (this.title = review.title),
-        (this.text = review.text);
-    }
-  }
+  const [reviewDate, setReviewDate] = useState([
+    { id: 1, text_review: "", user_name: "" },
+  ]);
 
   useEffect(() => {
     async function RevDate() {
       try {
-        const response = await fetch("/api/reviews");
+        const response = await fetch(
+          "https://horse-travel.com/reviews/reviews/",
+          {
+            headers: {
+              Accept: "application/json",
+            },
+          }
+        );
         const data = await response.json();
-        setReviewDate(data[0].review);
+        if (Array.isArray(data.reviews)) {
+          setReviewDate(data.reviews);
+        } else {
+          console.error("Reviews data is not an array");
+        }
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -81,17 +79,17 @@ export default function ReviewsSection() {
                     <h1
                       className={`${roboto.className} leading-[130%] text-[36px] pr-[120px] text-white`}
                     >
-                      {el.name}
+                      {el.user_name}
                     </h1>
                     <h3
                       className={`${roboto.className} text-[18px] text-white`}
                     >
-                      {el.title}
+                      {el.text_review}
                     </h3>
                   </div>
                 </div>
                 <div className="w-full h-[60%] lg:h-[50%]">
-                  <h2 className="px-[20px] text-white">{el.text}</h2>
+                  <h2 className="px-[20px] text-white"></h2>
                 </div>
               </div>
             </SwiperSlide>
