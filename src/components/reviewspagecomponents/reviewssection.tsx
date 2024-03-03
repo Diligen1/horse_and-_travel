@@ -10,22 +10,41 @@ const roboto = Roboto({
 });
 
 export default function ReviewsComponents() {
-  const [selectedImage, setSelectedImage] = useState(null);
   const [formData, setFormData] = useState({
-    image: "",
     title: "",
     text: "",
   });
 
-  // const handleImageChange = (e) => {
-  //   const file = e.target.files[0];
-  //   let imageUrl = null;
-  //   if (file && file.type.startsWith("image/")) {
-  //     imageUrl = URL.createObjectURL(file);
-  //     setSelectedImage(imageUrl);
-  //   }
-  // };
-
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+  const handlePost = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch(
+        "https://horse-travel.com/reviews/reviews/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+      if (response.ok) {
+        console.log("Данные успешно отправлены на сервер");
+      } else {
+        console.error("Ошибка при отправке данных на сервер");
+        console.log(formData);
+      }
+    } catch (error) {
+      console.error("Ошибка:", error);
+    }
+  };
   return (
     <main className="mx-auto">
       <div className="w-full pt-[80px] flex flex-row justify-center items-center">
@@ -46,6 +65,9 @@ export default function ReviewsComponents() {
                 className={`w-[300px] md:w-[400px] px-[10px] text-blue-600 py-[8px] outline-none rounded-[8px] border-blue-600 border-[1px] bg-transparent ${style.input}`}
                 type="text"
                 placeholder="Введите название отзыва"
+                name="title"
+                value={formData.title}
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -58,26 +80,18 @@ export default function ReviewsComponents() {
                 rows={5}
                 cols={30}
                 placeholder="Введите текст..."
+                name="text"
+                value={formData.text}
+                onChange={handleChange}
                 className={`${style.input} w-[300px] md:w-[400px] text-blue-600 px-[10px] py-[8px] outline-none rounded-[8px] border-blue-600 border-[1px] bg-transparent`}
               />
             </div>
           </div>
           <div className="w-[50%] flex flex-col pb-[20px] justify-center items-center ">
-            <input type="file" className="hidden" id="fileInput" />
-            <label
-              htmlFor="fileInput"
-              className="cursor-pointer w-[200px] text-white bg-blue-600 px-[40px] py-[10px] rounded-[16px]"
+            <button
+              onClick={handlePost}
+              className="py-[10px] px-[30px] bg-transperent text-blue-600 border-blue-600 border-[1px]"
             >
-              Выбрать файл
-            </label>
-            {selectedImage && (
-              <div className="pt-[20px] w-full flex flex-col justify-center items-center">
-                <img src={selectedImage} alt="Selected" className="w-[300px]" />
-              </div>
-            )}
-          </div>
-          <div className="w-[50%] pt-[40px] flex flex-col pb-[20px] justify-center items-center ">
-            <button className="py-[10px] px-[30px] bg-transperent text-blue-600 border-blue-600 border-[1px]">
               Отправить
             </button>
           </div>

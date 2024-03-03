@@ -79,7 +79,7 @@ export default function ReviewsSection() {
                 <div className="flex flex-row w-full h-[50%]">
                   <div className="w-[70%] px-[20px] flex flex-col justify-center gap-[10px]">
                     <h1
-                      className={`${roboto.className} leading-[130%] text-[24px] pr-[140px] text-white`}
+                      className={`${roboto.className} leading-[130%] text-[36px] pr-[120px] text-white`}
                     >
                       {el.name}
                     </h1>
@@ -92,14 +92,6 @@ export default function ReviewsSection() {
                 </div>
                 <div className="w-full h-[60%] lg:h-[50%]">
                   <h2 className="px-[20px] text-white">{el.text}</h2>
-                </div>
-                <div className="w-full flex justify-start items-start">
-                  <Image
-                    src={el.image}
-                    alt="#"
-                    priority
-                    className="w-[140px] h-[140px] p-[10px] rounded-[32px] "
-                  />
                 </div>
               </div>
             </SwiperSlide>

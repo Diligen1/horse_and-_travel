@@ -20,7 +20,7 @@ export default function RegisterComponents() {
     username: "",
     email: "",
     password: "",
-    confirmPassword: "",
+    password2: "",
   });
 
   const registerHandle = async () => {
@@ -28,9 +28,13 @@ export default function RegisterComponents() {
       formData.username.trim() === "" ||
       formData.email.trim() === "" ||
       formData.password.trim() === "" ||
-      formData.confirmPassword.trim() === ""
+      formData.password2.trim() === ""
     ) {
       alert("Заполните все поля ввода");
+    } else if (formData.password.length < 8) {
+      alert("Пароль должен содержать не менее 8 символов");
+    } else if (formData.password !== formData.password2) {
+      alert("Пароли не совпадают");
     } else {
       try {
         const response = await fetch(
@@ -45,10 +49,10 @@ export default function RegisterComponents() {
         );
         const data = await response.json();
         console.log(formData);
-        if (data.success === true) {
+        if (data.success) {
           window.location.href = "/";
         } else {
-          alert("неверные учетные данные");
+          window.location.href = "/";
         }
       } catch (error) {
         console.error(error);
@@ -72,11 +76,14 @@ export default function RegisterComponents() {
         }
       );
       const data = await response.json();
-      if (data.success) {
+      console.log(data);
+      if (response.ok) {
+        localStorage.setItem("user_id", data.user_id);
+        localStorage.setItem("access_token", data.access);
+        localStorage.setItem("refresh_token", data.refresh);
         window.location.href = "/";
-        return data.user;
       } else {
-        throw new Error("Ошибка Авторизации");
+        throw new Error(data.detail);
       }
     } catch (error) {
       console.error(error);
@@ -141,11 +148,11 @@ export default function RegisterComponents() {
                 />
                 <input
                   type="text"
-                  value={formData.confirmPassword}
+                  value={formData.password2}
                   onChange={(e) =>
                     setFormData({
                       ...formData,
-                      confirmPassword: e.target.value,
+                      password2: e.target.value,
                     })
                   }
                   placeholder="Повторите пароль"
