@@ -34,7 +34,7 @@ export default function RegisterComponents() {
     } else {
       try {
         const response = await fetch(
-          "http://52.59.220.58/users/register/user/",
+          "https://horse-travel.com/users/register/user/",
           {
             method: "POST",
             headers: {
@@ -44,7 +44,8 @@ export default function RegisterComponents() {
           }
         );
         const data = await response.json();
-        if (data.success) {
+        console.log(formData);
+        if (data.success === true) {
           window.location.href = "/";
         } else {
           alert("неверные учетные данные");
@@ -57,16 +58,19 @@ export default function RegisterComponents() {
 
   const authorHandle = async () => {
     try {
-      const response = await fetch("http://52.59.220.58/users/login/user/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: formData.email,
-          password: formData.password,
-        }),
-      });
+      const response = await fetch(
+        "https://horse-travel.com/users/login/user/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: formData.email,
+            password: formData.password,
+          }),
+        }
+      );
       const data = await response.json();
       if (data.success) {
         window.location.href = "/";
@@ -118,7 +122,7 @@ export default function RegisterComponents() {
                   className={`bg-blue-300 text-blue-600 w-[280px] outline-none text-[12px] px-[10px] py-[8px] ${style.input}`}
                 />
                 <input
-                  type="text"
+                  type="email"
                   value={formData.email}
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
@@ -181,7 +185,7 @@ export default function RegisterComponents() {
               </div>
               <div className="flex flex-col h-[40%] justify-center gap-[30px] items-center">
                 <input
-                  type="text"
+                  type="email"
                   value={formData.email}
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })

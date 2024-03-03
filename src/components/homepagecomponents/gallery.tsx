@@ -17,32 +17,30 @@ const comfortaa = Comfortaa({
 
 export default function Gallery() {
   const [modalopen, setModelopen] = useState(false);
-  const [imageData, setImageDate] = useState<imagesCol[]>([]);
-  const [selectedImage, setSelectedImage] = useState<imagesCol | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [imageData, setImageData] = useState([{ id: 1, images: "" }]);
 
-  function handlemodelopen() {
+  function handlemodelopen(index) {
+    setSelectedIndex(index);
     setModelopen(true);
   }
   function handlemodelclose() {
     setModelopen(false);
   }
-  class imagesCol {
-    public id: number;
-    public image: string;
-    public text: string;
-    constructor(images: imagesCol) {
-      this.id = images.id;
-      this.image = images.image;
-      this.text = images.text;
-    }
-  }
 
   useEffect(() => {
     async function ColImage() {
       try {
-        const response = await fetch("/api/gallery");
+        const response = await fetch(
+          "https://horse-travel.com/gallerys/list/gallerys/",
+          {
+            headers: {
+              Accept: "application/json",
+            },
+          }
+        );
         const data = await response.json();
-        setImageDate(data[0].images);
+        setImageData(data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -60,16 +58,22 @@ export default function Gallery() {
             GALLERY
           </h1>
         </div>
-        <div className="w-full flex flex-wrap  justify-center items-center">
-          {imageData.map((el) => (
-            <div key={el.id} className="w-[260px] h-[250px] overflow-y-hidden">
-              <Image
-                src={el.image}
-                alt="#"
-                priority
-                className="w-[260px] "
-                onClick={handlemodelopen}
-              />
+        <div className="w-full h-[500px] overflow-auto flex flex-wrap justify-center items-center">
+          {imageData.map((el, index) => (
+            <div
+              key={el.id}
+              className=" h-[250px] w-[260px] overflow-y-hidden justify-center items-center"
+            >
+              {el.images && (
+                <Image
+                  src={el.images}
+                  alt="#"
+                  width={1080}
+                  height={1000}
+                  className="h-[300px]"
+                  onClick={() => handlemodelopen(index)}
+                />
+              )}
             </div>
           ))}
         </div>
@@ -91,15 +95,19 @@ export default function Gallery() {
                   slidesPerView: 1,
                 },
               }}
+              initialSlide={selectedIndex !== null ? selectedIndex : 0}
             >
               {imageData.map((el) => (
                 <SwiperSlide key={el.id} className=" w-full h-[100%]  ">
-                  <Image
-                    src={el.image}
-                    alt="#"
-                    priority
-                    className="w-full lg:h-[100%] lg:w-[100%] h-[100%] aspect-3/2 object-contain"
-                  />
+                  {el.images && (
+                    <Image
+                      src={el.images}
+                      alt="#"
+                      width={1080}
+                      height={1000}
+                      className="w-full lg:h-[100%] lg:w-[100%] h-[100%] aspect-3/2 object-contain"
+                    />
+                  )}
                 </SwiperSlide>
               ))}
             </Swiper>

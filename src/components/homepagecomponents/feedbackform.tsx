@@ -4,6 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { Bebas_Neue, Roboto } from "next/font/google";
 import { useState, useEffect } from "react";
+import svg from "@/assets/images/feedback.img/mountains.png";
+import svg_2 from "@/assets/images/feedback.img/Maps.png";
+
 const bebas = Bebas_Neue({
   weight: ["400"],
   display: "swap",
@@ -16,53 +19,56 @@ const roboto = Roboto({
 });
 
 export default function FeedbackForm() {
-  const [feedbackform, setFeedback] = useState<FeedbackCol[]>([]);
-  const [selectedImage, setSelectedImage] = useState<FeedbackCol | null>(null);
-
-  class FeedbackCol {
-    public id: number;
-    public img: string;
-    public text: string;
-    public title: string;
-    constructor(value: FeedbackCol) {
-      this.id = value.id;
-      this.title = value.title;
-      this.img = value.img;
-      this.text = value.text;
-    }
-  }
+  const [feedbackform, setFeedback] = useState([
+    { id: 1, title: "", description: "" },
+  ]);
 
   useEffect(() => {
-    async function ColImage() {
+    const Feedbackform = async () => {
       try {
-        const response = await fetch("/api/feedback");
+        const response = await fetch(
+          "https://horse-travel.com/info/list/info/",
+          {
+            headers: {
+              Accept: "application/json",
+            },
+          }
+        );
+        if (!response.ok) {
+          throw new Error("Ошибка при загрузке данных");
+        }
         const data = await response.json();
-        setFeedback(data[0].value);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-      if (!feedbackform) {
-        return <div>Loading...</div>;
-      }
-    }
 
-    ColImage();
+        setFeedback(data);
+      } catch (error) {
+        console.error("Ошибка при загрузке", error);
+      }
+    };
+    Feedbackform();
   }, []);
 
+  const feedbackImage = [
+    {
+      id: 1,
+      image: svg,
+    },
+    { id: 2, image: svg_2 },
+  ];
   return (
     <main className="mx-auto ">
       <div className="w-full flex relative flex-col lg:flex-row justify-center items-center ">
-        {feedbackform.map((el) => (
+        {feedbackform.map((el, index) => (
           <div
-            key={el.id}
+            key={index}
             className=" w-full lg:w-[50%] h-[300px] relative bg-blue-600"
           >
             <Image
-              src={el.img}
+              src={feedbackImage[index].image}
               alt="#"
               priority
               className=" absolute bottom-0 right-[10px] w-[180px] h-[180px] md:w-[250px] md:h-[250px]"
             />
+            ;
             <div className="flex flex-col justify-center items- absolute left-[40px] top-[40%] translate-y-[-60%]">
               <h1
                 className={`${bebas.className}  text-white text-[24px] md:text-[36px] cursor-default pt-[40px] lg:pt-[80px]`}
@@ -70,7 +76,7 @@ export default function FeedbackForm() {
                 {el.title}
               </h1>
               <p className="  text-white pr-[100px] md:pr-[180px] pb-[10px] text-[12px] md:text-[14px]">
-                {el.text}
+                {el.description}
               </p>
               <Link
                 href="/about"
