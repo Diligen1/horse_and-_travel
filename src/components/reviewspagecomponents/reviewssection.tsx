@@ -10,7 +10,9 @@ const roboto = Roboto({
 });
 
 export default function ReviewsComponents() {
-  const [formData, setFormData] = useState({ user: 17, text_review: "" });
+  const [formData, setFormData] = useState({
+    text_review: "",
+  });
 
   const reviewHandle = async () => {
     if (formData.text_review.trim() === "") {
@@ -18,6 +20,12 @@ export default function ReviewsComponents() {
     } else {
       try {
         const accessToken = localStorage.getItem("access_token");
+        const userId = localStorage.getItem("user_id");
+        const reviewData = {
+          ...formData,
+          user: userId,
+        };
+
         const response = await fetch(
           "https://horse-travel.com/reviews/reviews/",
           {
@@ -26,12 +34,11 @@ export default function ReviewsComponents() {
               "Content-Type": "application/json",
               Authorization: `Bearer ${accessToken}`,
             },
-            body: JSON.stringify(formData),
+            body: JSON.stringify(reviewData),
           }
         );
 
         const data = await response.json();
-        console.log(formData);
       } catch (error) {
         console.error(error);
       }

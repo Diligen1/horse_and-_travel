@@ -43,7 +43,7 @@ export default function FooterSection() {
             className="p-[20px] w-full sm:w-auto flex flex-col justify-around items-start"
           >
             <h1
-              className={`${roboto.className} text-[18px] pb-[20px] text-white font-bold`}
+              className={`${roboto.className} text-[18px] pb-[20px] text-white `}
             >
               Контакты
             </h1>
@@ -63,7 +63,7 @@ export default function FooterSection() {
 
         <div className="p-[20px] w-full hidden  sm:w-auto sm:flex flex-col justify-between items-end sm:items-start">
           <h1
-            className={`${roboto.className}text-[18px] pb-[20px] text-white font-bold`}
+            className={`${roboto.className}text-[18px] pb-[20px] text-white `}
           >
             Навигационная панель
           </h1>
@@ -90,7 +90,7 @@ export default function FooterSection() {
         </div>
         <div className="p-[20px] flex flex-col justify-between items-start">
           <h1
-            className={`${roboto.className} text-[18px] pb-[20px] text-white font-bold`}
+            className={`${roboto.className} text-[18px] pb-[20px] text-white `}
           >
             Соц сети
           </h1>
