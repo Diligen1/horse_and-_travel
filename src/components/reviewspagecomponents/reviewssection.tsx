@@ -10,24 +10,26 @@ const roboto = Roboto({
 });
 
 export default function ReviewsComponents() {
-  const [formData, setFormData] = useState({
-    title: "",
-    description: "",
-  });
+  const [formData, setFormData] = useState({ user: 17, text_review: "" });
 
   const reviewHandle = async () => {
-    if (formData.title.trim() === "" || formData.description.trim() === "") {
+    if (formData.text_review.trim() === "") {
       alert("Заполните поля что бы отправить");
     } else {
       try {
+        const accessToken = localStorage.getItem("access_token");
         const response = await fetch(
           "https://horse-travel.com/reviews/reviews/",
           {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${accessToken}`,
+            },
             body: JSON.stringify(formData),
           }
         );
+
         const data = await response.json();
         console.log(formData);
       } catch (error) {
@@ -47,37 +49,20 @@ export default function ReviewsComponents() {
           </h1>
         </div>
         <div className="w-[70%] h-[100%] flex flex-col justify-around items-center ">
-          <div className=" w-full h-[30%] justify-center flex flex-col items-center">
-            <h1 className="text-[18px] w-[200px] pb-[20px] md:w-auto font-bold">
-              Как бы вы оценили свое прибывание ?
-            </h1>
-            <div>
-              <input
-                className={`w-[300px] md:w-[400px] px-[10px] text-blue-600 py-[8px] outline-none rounded-[8px] border-blue-600 border-[1px] bg-transparent ${style.input}`}
-                type="text"
-                placeholder="Введите название отзыва"
-                name="title"
-                onChange={(e) => {
-                  setFormData({ ...formData, title: e.target.value });
-                }}
-                value={formData.title}
-              />
-            </div>
-          </div>
           <div className="w-[50%] h-[30%] py-[40px] flex flex-col justify-center items-center ">
-            <h1 className="text-[18px] w-[200px] md:w-auto pb-[20px] font-bold">
+            <h1 className="text-[24px] w-[200px] md:w-auto pb-[20px] font-bold">
               Напишите отзыв
             </h1>
             <div>
               <textarea
-                rows={5}
-                cols={30}
+                rows={6}
+                cols={40}
                 placeholder="Введите текст..."
                 name="text"
                 onChange={(e) => {
-                  setFormData({ ...formData, description: e.target.value });
+                  setFormData({ ...formData, text_review: e.target.value });
                 }}
-                value={formData.description}
+                value={formData.text_review}
                 className={`${style.input} w-[300px] md:w-[400px] text-blue-600 px-[10px] py-[8px] outline-none rounded-[8px] border-blue-600 border-[1px] bg-transparent`}
               />
             </div>

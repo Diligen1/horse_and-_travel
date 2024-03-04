@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import Image from "next/image";
 import { Roboto, Comfortaa } from "next/font/google";
 
 const roboto = Roboto({
@@ -22,9 +21,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 export default function ReviewsSection() {
-  const [reviewDate, setReviewDate] = useState([
-    { id: 1, text_review: "", user_name: "" },
-  ]);
+  const [reviewDate, setReviewDate] = useState([]);
 
   useEffect(() => {
     async function RevDate() {
@@ -38,7 +35,8 @@ export default function ReviewsSection() {
           }
         );
         const data = await response.json();
-        if (Array.isArray(data.reviews)) {
+        console.log(data);
+        if (data.reviews) {
           setReviewDate(data.reviews);
         } else {
           console.error("Reviews data is not an array");
