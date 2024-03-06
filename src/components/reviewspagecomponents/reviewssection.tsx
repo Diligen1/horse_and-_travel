@@ -39,6 +39,9 @@ export default function ReviewsComponents() {
         );
 
         const data = await response.json();
+        if (response.ok) {
+          window.location.href = "/";
+        }
       } catch (error) {
         console.error(error);
       }
