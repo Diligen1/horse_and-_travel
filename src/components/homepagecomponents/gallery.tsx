@@ -17,10 +17,10 @@ const comfortaa = Comfortaa({
 
 export default function Gallery() {
   const [modalopen, setModelopen] = useState(false);
-  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState(-1);
   const [imageData, setImageData] = useState([{ id: 1, images: "" }]);
 
-  function handlemodelopen(index) {
+  function handlemodelopen(index: number) {
     setSelectedIndex(index);
     setModelopen(true);
   }
