@@ -53,7 +53,7 @@ export default function ReviewsComponents() {
       <div className="w-full pt-[80px] flex flex-row justify-center items-center">
         <div className="w-[30%] h-[90vh] border-r-[1px] border-blue-600 hidden md:flex justify-center items-center">
           <h1
-            className={`text-[38px] hover:text-blue-500 duration-500 font-bold cursor-default ${roboto.className}`}
+            className={`text-[38px] hover:text-blue-500 duration-500  font-bold cursor-default ${roboto.className}`}
           >
             Какие у вас впечатления ?
           </h1>
