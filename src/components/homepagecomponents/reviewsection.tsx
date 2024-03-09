@@ -2,19 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Roboto, Comfortaa } from "next/font/google";
 
-const roboto = Roboto({
-  weight: ["400", "500"],
-  display: "swap",
-  subsets: ["cyrillic", "latin"],
-});
-
-const comfortaa = Comfortaa({
-  weight: ["400"],
-  display: "swap",
-  subsets: ["cyrillic"],
-});
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -60,11 +48,7 @@ export default function ReviewsSection() {
     <main className="mx-auto">
       <div className="w-full h-[400px]  lg:h-[500px] flex flex-col bg-white justify-center items-center">
         <div className="pb-[20px] lg:pb-[40px]">
-          <h1
-            className={` ${comfortaa.className} text-[18px] text-blue-600 lg:text-[36px]`}
-          >
-            REVIEW
-          </h1>
+          <h1 className={`text-[18px] text-blue-600 lg:text-[36px]`}>REVIEW</h1>
         </div>
         <Swiper
           pagination={{ clickable: true }}
@@ -82,13 +66,13 @@ export default function ReviewsSection() {
               <div className=" w-full h-[100%] bg-blue-600 flex flex-col justify-center items-center rounded-[32px]">
                 <div className="w-[80%] h-[30%]  flex justify-start items-center">
                   <h1
-                    className={`${roboto.className} leading-[130%] text-[30px] pr-[120px] text-white`}
+                    className={` leading-[130%] text-[30px] pr-[120px] text-white`}
                   >
                     {review.user_name}
                   </h1>
                 </div>
                 <div className="w-[80%] h-[60%]  flex justify-start items-start">
-                  <h3 className={`${roboto.className} text-[18px] text-white`}>
+                  <h3 className={` text-[18px] text-white`}>
                     {review.text_review}
                   </h3>
                 </div>

@@ -1,21 +1,9 @@
 "use client";
-import { Bebas_Neue, Comfortaa } from "next/font/google";
 import Link from "next/link";
 import "@/styles/globals.css";
 import { motion } from "framer-motion";
 
 import { useState } from "react";
-
-const bebas = Bebas_Neue({
-  weight: ["400"],
-  display: "swap",
-  subsets: ["latin"],
-});
-const comfortaa = Comfortaa({
-  weight: ["400", "500"],
-  display: "swap",
-  subsets: ["cyrillic", "latin"],
-});
 
 export default function Header() {
   const [isActive, setIsActive] = useState(false);
@@ -38,7 +26,7 @@ export default function Header() {
         <div>
           <Link
             href="/"
-            className={`${bebas.className} m-0 text-[24px] lg:text-[32px] text-white hover:text-blue-900 duration-500`}
+            className={` m-0 text-[24px] lg:text-[32px] text-white hover:text-blue-900 duration-500`}
           >
             Horse and Travel
           </Link>
@@ -49,28 +37,28 @@ export default function Header() {
             className="flex flex-col items-center text-white justify-center cursor-pointer hover:bg-white hover:text-blue-600 duration-500 px-[30px] py-12px] rounded-[18px] "
           >
             <i className="fi fi-rr-home "></i>
-            <h1 className={`${comfortaa.className} `}>Главная</h1>
+            <h1 className={` `}>Главная</h1>
           </Link>
           <Link
             href="/about"
             className="flex flex-col items-center  text-white justify-center cursor-pointer hover:bg-white hover:text-blue-600 duration-500 px-[30px] py-12px] rounded-[18px]"
           >
             <i className="fi fi-rr-users-alt "></i>
-            <h1 className={`${comfortaa.className} `}>О нас</h1>
+            <h1 className={` `}>О нас</h1>
           </Link>
           <Link
             href="/review"
             className="flex flex-col items-center text-white justify-center cursor-pointer hover:bg-white hover:text-blue-600 duration-500 px-[30px] py-12px] rounded-[18px]"
           >
             <i className="fi fi-rr-edit "></i>
-            <h1 className={`${comfortaa.className} `}>Отзыв</h1>
+            <h1 className={` `}>Отзыв</h1>
           </Link>
         </div>
         <div className={`hidden lg:flex flex-row `}>
           <div className="ml-[10px]">
             <Link
               href="/register"
-              className={`${comfortaa.className} lg:block px-[22px] py-[8px] text-center bg-white text-blue-400 rounded-[18px] hover:bg-blue-400 hover:text-white duration-500`}
+              className={` lg:block px-[22px] py-[8px] text-center bg-white text-blue-400 rounded-[18px] hover:bg-blue-400 hover:text-white duration-500`}
             >
               ВХОД
             </Link>
@@ -105,28 +93,19 @@ export default function Header() {
             <div className="h-[200px]  flex flex-col items-center justify-around">
               <div className="flex flex-row items-center justify-center">
                 <i className="fi fi-rr-home text-white"></i>
-                <Link
-                  href="/"
-                  className={`${comfortaa.className} text-white mx-[15px]`}
-                >
+                <Link href="/" className={` text-white mx-[15px]`}>
                   Главная
                 </Link>
               </div>
               <div className="flex flex-row items-center justify-center">
                 <i className="fi fi-rr-users-alt text-white"></i>
-                <Link
-                  href="/"
-                  className={`${comfortaa.className} text-white mx-[15px]`}
-                >
+                <Link href="/" className={` text-white mx-[15px]`}>
                   О нас
                 </Link>
               </div>
               <div className="flex flex-row items-center justify-center">
                 <i className="fi fi-rr-edit text-white"></i>
-                <Link
-                  href="/review"
-                  className={`${comfortaa.className} text-white mx-[15px]`}
-                >
+                <Link href="/review" className={` text-white mx-[15px]`}>
                   Отзыв
                 </Link>
               </div>
@@ -134,10 +113,7 @@ export default function Header() {
           </div>
           <div className="pt-[20px] h-[150px]  flex flex-col items-center justify-around ">
             <div>
-              <Link
-                href="/register"
-                className={`${comfortaa.className} lg:block text-white`}
-              >
+              <Link href="/register" className={` lg:block text-white`}>
                 ВХОД
               </Link>
             </div>

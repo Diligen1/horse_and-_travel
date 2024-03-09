@@ -1,13 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Roboto } from "next/font/google";
 import style from "@/styles/reviews.module.css";
-
-const roboto = Roboto({
-  weight: ["400", "500"],
-  display: "swap",
-  subsets: ["cyrillic", "latin"],
-});
 
 export default function ReviewsComponents() {
   const [formData, setFormData] = useState({
@@ -53,7 +46,7 @@ export default function ReviewsComponents() {
       <div className="w-full pt-[80px] flex flex-row justify-center items-center">
         <div className="w-[30%] h-[90vh] border-r-[1px] border-blue-600 hidden md:flex justify-center items-center">
           <h1
-            className={`text-[38px] hover:text-blue-500 duration-500  font-bold cursor-default ${roboto.className}`}
+            className={`text-[38px] hover:text-blue-500 duration-500  font-bold cursor-default `}
           >
             Какие у вас впечатления ?
           </h1>

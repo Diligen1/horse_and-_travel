@@ -2,18 +2,7 @@
 import { useState, useEffect } from "react";
 import style from "@/styles/register.module.css";
 import Link from "next/link";
-import { Roboto, Bebas_Neue } from "next/font/google";
 
-const roboto = Roboto({
-  weight: ["400", "500", "700", "900"],
-  display: "swap",
-  subsets: ["cyrillic", "latin"],
-});
-const bebas = Bebas_Neue({
-  weight: ["400"],
-  display: "swap",
-  subsets: ["latin"],
-});
 export default function RegisterComponents() {
   const [isActive, setIsActive] = useState(false);
   const [formData, setFormData] = useState({
@@ -109,13 +98,11 @@ export default function RegisterComponents() {
             >
               <div className="h-[100px] gap-[10px] flex flex-col  items-center">
                 <h1
-                  className={`${roboto.className} text-blue-600  text-[24px] font-bold cursor-default`}
+                  className={` text-blue-600  text-[24px] font-bold cursor-default`}
                 >
                   Регистрация
                 </h1>
-                <p
-                  className={`text-[14px] text-blue-600 cursor-default ${roboto.className} `}
-                >
+                <p className={`text-[14px] text-blue-600 cursor-default  `}>
                   Зарегестрируйтесь что бы продолжить
                 </p>
               </div>
@@ -181,13 +168,11 @@ export default function RegisterComponents() {
             >
               <div className="h-[100px] gap-[10px] flex flex-col  items-center">
                 <h1
-                  className={`${roboto.className} text-blue-600  text-[24px] font-bold cursor-default`}
+                  className={` text-blue-600  text-[24px] font-bold cursor-default`}
                 >
                   Авторизация
                 </h1>
-                <p
-                  className={`text-[14px] text-blue-600 cursor-default ${roboto.className} `}
-                >
+                <p className={`text-[14px] text-blue-600 cursor-default  `}>
                   Авторизуйтесь что бы продолжить
                 </p>
               </div>
@@ -236,15 +221,13 @@ export default function RegisterComponents() {
               } w-[50%] h-[100%] hidden md:flex flex-col justify-center items-center`}
             >
               <p
-                className={`absolute top-[10px] left-[10px] text-[22px] text-white ${bebas.className}`}
+                className={`absolute top-[10px] left-[10px] text-[22px] text-white `}
               >
                 Horse and Travel
               </p>
               <div className="h-[50%] w-[50%] flex flex-col justify-around items-center">
-                <h1 className={`text-white text-[24px] ${roboto.className}`}>
-                  Регистрация
-                </h1>
-                <h1 className={`text-white text-[16px] ${roboto.className}`}>
+                <h1 className={`text-white text-[24px] `}>Регистрация</h1>
+                <h1 className={`text-white text-[16px] `}>
                   Если у вас нету Аккаунта можете зарегестрироваться
                 </h1>
                 <button
@@ -261,15 +244,13 @@ export default function RegisterComponents() {
               } w-[50%] h-[100%] hidden md:flex flex-col justify-center items-center`}
             >
               <p
-                className={`absolute top-[10px] right-[10px] text-[22px] text-white ${bebas.className}`}
+                className={`absolute top-[10px] right-[10px] text-[22px] text-white `}
               >
                 Horse and Travel
               </p>
               <div className="h-[50%] w-[50%] flex flex-col justify-around items-center">
-                <h1 className={`text-white text-[24px] ${roboto.className}`}>
-                  Авторизация
-                </h1>
-                <h1 className={`text-white text-[16px] ${roboto.className}`}>
+                <h1 className={`text-white text-[24px] `}>Авторизация</h1>
+                <h1 className={`text-white text-[16px] `}>
                   Если у вас есть Аккаунта можете войти
                 </h1>
                 <button

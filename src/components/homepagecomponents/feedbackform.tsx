@@ -2,21 +2,9 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Bebas_Neue, Roboto } from "next/font/google";
 import { useState, useEffect } from "react";
 import svg from "@/assets/images/feedback.img/mountains.png";
 import svg_2 from "@/assets/images/feedback.img/Maps.png";
-
-const bebas = Bebas_Neue({
-  weight: ["400"],
-  display: "swap",
-  subsets: ["latin"],
-});
-const roboto = Roboto({
-  weight: ["400"],
-  display: "swap",
-  subsets: ["latin"],
-});
 
 export default function FeedbackForm() {
   const [feedbackform, setFeedback] = useState([
@@ -71,7 +59,7 @@ export default function FeedbackForm() {
             ;
             <div className="flex flex-col justify-center items- absolute left-[40px] top-[40%] translate-y-[-60%]">
               <h1
-                className={`${bebas.className}  text-white text-[24px] md:text-[36px] cursor-default pt-[40px] lg:pt-[80px]`}
+                className={`  text-white text-[24px] md:text-[36px] cursor-default pt-[40px] lg:pt-[80px]`}
               >
                 {el.title}
               </h1>
@@ -80,7 +68,7 @@ export default function FeedbackForm() {
               </p>
               <Link
                 href="/about"
-                className={`${roboto.className} w-[180px] px-[15px] py-[10px] bg-white text-center text-blue-600 rounded-[16px]`}
+                className={` w-[180px] px-[15px] py-[10px] bg-white text-center text-blue-600 rounded-[16px]`}
               >
                 get ready
               </Link>

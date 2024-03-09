@@ -2,18 +2,11 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Comfortaa } from "next/font/google";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-
-const comfortaa = Comfortaa({
-  weight: ["400"],
-  display: "swap",
-  subsets: ["cyrillic"],
-});
 
 export default function Gallery() {
   const [modalopen, setModelopen] = useState(false);
@@ -52,9 +45,7 @@ export default function Gallery() {
     <main className="mx-auto " id="gallery">
       <div className="w-full pb-[20px] lg:pb-[80px]z relative border-blue-600 bg-white border-b-[2px] ">
         <div className="text-center py-[20px]">
-          <h1
-            className={` ${comfortaa.className} text-[18px] text-blue-600 lg:text-[36px]`}
-          >
+          <h1 className={`  text-[18px] text-blue-600 lg:text-[36px]`}>
             GALLERY
           </h1>
         </div>

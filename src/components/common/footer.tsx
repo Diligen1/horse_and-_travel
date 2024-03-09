@@ -1,12 +1,6 @@
 "use client";
-import { Roboto } from "next/font/google";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-const roboto = Roboto({
-  weight: ["400", "500", "700"],
-  display: "swap",
-  subsets: ["cyrillic", "latin"],
-});
 
 export default function FooterSection() {
   const [infoData, setInfoData] = useState<ImageData[]>([]);
@@ -42,58 +36,42 @@ export default function FooterSection() {
             key={el.id}
             className="p-[20px] w-full sm:w-auto flex flex-col justify-around items-start"
           >
-            <h1
-              className={`${roboto.className} text-[18px] pb-[20px] text-white `}
-            >
-              Контакты
-            </h1>
+            <h1 className={`text-[18px] pb-[20px] text-white `}>Контакты</h1>
             <div className="h-[120px] flex flex-col justify-around items-start text-white">
-              <p className={`${roboto.className} text-[14px] sm:text-[14px]`}>
-                +996{el.number}
-              </p>
-              <p className={`${roboto.className} text-[14px] sm:text-[14px]`}>
-                {el.email}
-              </p>
-              <p className={`${roboto.className} text-[14px] sm:text-[14px]`}>
-                {el.adress}
-              </p>
+              <p className={`text-[14px] sm:text-[14px]`}>+996{el.number}</p>
+              <p className={`text-[14px] sm:text-[14px]`}>{el.email}</p>
+              <p className={`text-[14px] sm:text-[14px]`}>{el.adress}</p>
             </div>
           </div>
         ))}
 
         <div className="p-[20px] w-full hidden  sm:w-auto sm:flex flex-col justify-between items-end sm:items-start">
-          <h1
-            className={`${roboto.className}text-[18px] pb-[20px] text-white `}
-          >
+          <h1 className={`text-[18px] pb-[20px] text-white `}>
             Навигационная панель
           </h1>
           <div className="h-[120px] flex flex-col justify-around items-end sm:items-start text-white">
             <Link
               href="/"
-              className={`${roboto.className} hover:text-blue-800 duration-200 text-[14px]`}
+              className={`hover:text-blue-800 duration-200 text-[14px]`}
             >
               Главная
             </Link>
             <Link
               href="/review"
-              className={`${roboto.className} hover:text-blue-800 duration-200 text-[14px]`}
+              className={`hover:text-blue-800 duration-200 text-[14px]`}
             >
               Отзыв
             </Link>
             <Link
               href="/about"
-              className={`${roboto.className} hover:text-blue-800 duration-200 text-[14px]`}
+              className={`hover:text-blue-800 duration-200 text-[14px]`}
             >
               О нас
             </Link>
           </div>
         </div>
         <div className="p-[20px] flex flex-col justify-between items-start">
-          <h1
-            className={`${roboto.className} text-[18px] pb-[20px] text-white `}
-          >
-            Соц сети
-          </h1>
+          <h1 className={`text-[18px] pb-[20px] text-white `}>Соц сети</h1>
           <div className=" h-[80px] sm:h-[120px] flex flex-row justify-between gap-[20px] items-start text-white">
             <i className="fi fi-brands-instagram text-[14px] sm:text-[20px]"></i>
             <i className="fi fi-brands-whatsapp text-[14px] sm:text-[20px]"></i>

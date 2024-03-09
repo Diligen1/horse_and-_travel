@@ -2,12 +2,6 @@
 import { Header } from "@/components";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { Comfortaa } from "next/font/google";
-const comfortaa = Comfortaa({
-  weight: ["400"],
-  display: "swap",
-  subsets: ["latin"],
-});
 
 export default function PromoAbout() {
   const [imageData, setImageData] = useState("");
@@ -47,7 +41,7 @@ export default function PromoAbout() {
         )}
         <div className="absolute top-[50%] left-[50%] z-[5] translate-x-[-50%] translate-y-[-50%]">
           <h1
-            className={`sm:text-[36px] text-white  text-[18px] cursor-default text-center ${comfortaa.className}`}
+            className={`sm:text-[36px] text-white  text-[18px] cursor-default text-center`}
           >
             About us
           </h1>
