@@ -43,7 +43,7 @@ export default function ReviewsSection() {
       }
     }
     RevDate();
-  }, []);
+  }, [reviewDate]);
   return (
     <main className="mx-auto">
       <div className="w-full h-[400px]  lg:h-[500px] flex flex-col bg-white justify-center items-center">
