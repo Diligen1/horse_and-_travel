@@ -3,6 +3,7 @@ const nextConfig = {
   images: {
     domains: ["horse-travel.com"],
   },
+  output: "standalone",
 };
 
 export default nextConfig;
