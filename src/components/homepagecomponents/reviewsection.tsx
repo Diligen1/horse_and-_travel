@@ -35,15 +35,14 @@ export default function ReviewsSection() {
           throw new Error("Failed to fetch user reviews");
         }
         const data = await response.json();
-        console.log(data);
-
         setReviewDate(data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     }
     RevDate();
-  }, [reviewDate]);
+  }, []);
+
   return (
     <main className="mx-auto">
       <div className="w-full h-[400px]  lg:h-[500px] flex flex-col bg-white justify-center items-center">
