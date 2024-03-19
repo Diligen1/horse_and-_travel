@@ -37,8 +37,8 @@ export default function RegisterComponents() {
           }
         );
         const data = await response.json();
-        console.log(formData);
-        if (data.success) {
+        console.log(data);
+        if (response.ok) {
           setSuccessMessage("Регистрация прошла успешно!");
           window.location.href = "/";
           localStorage.setItem("user_id", data.user_id);
