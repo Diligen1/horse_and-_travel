@@ -1,9 +1,7 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+
+module.exports = {
   images: {
     domains: ["back.horse-travel.com"],
   },
-  output: "standalone",
 };
-
-export default nextConfig;
