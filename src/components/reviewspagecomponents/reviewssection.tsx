@@ -32,10 +32,10 @@ export default function ReviewsComponents() {
         );
 
         const data = await response.json();
+        console.log(data);
         if (response.ok) {
           window.location.href = "/";
         } else {
-          console.error("Failed to post review:", data);
         }
       } catch (error) {
         console.error(error);
