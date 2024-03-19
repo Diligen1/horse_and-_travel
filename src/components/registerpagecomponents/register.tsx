@@ -27,7 +27,7 @@ export default function RegisterComponents() {
     } else {
       try {
         const response = await fetch(
-          "https://horse-travel.com/users/register/user/",
+          "https://back.horse-travel.com/api/users/register/user/",
           {
             method: "POST",
             headers: {
@@ -52,7 +52,7 @@ export default function RegisterComponents() {
   const authorHandle = async () => {
     try {
       const response = await fetch(
-        "https://horse-travel.com/users/login/user/",
+        "https://back.horse-travel.com/api/users/login/user/",
         {
           method: "POST",
           headers: {

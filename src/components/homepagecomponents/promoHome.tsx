@@ -11,7 +11,7 @@ export default function PromoHome() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://horse-travel.com/baner/detail/baner/1/?Accept=application/json",
+          "https://back.horse-travel.com/api/baner/detail/baner/1/?Accept=application/json",
           {
             headers: {
               Accept: "application/json",

@@ -11,7 +11,7 @@ function infoData() {
         {
           id: 1,
           number: "500220254",
-          email: "muratbaevking.@gmail.com",
+          email: "shekerbek.suranchiev@gmail.com",
           adress: "turusbekova 109/1",
         },
       ],

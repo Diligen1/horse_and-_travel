@@ -25,7 +25,7 @@ export default function Gallery() {
     async function ColImage() {
       try {
         const response = await fetch(
-          "https://horse-travel.com/gallerys/list/gallerys/",
+          "https://back.horse-travel.com/api/gallerys/list/gallerys/",
           {
             headers: {
               Accept: "application/json",
