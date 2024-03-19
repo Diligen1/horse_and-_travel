@@ -40,10 +40,12 @@ export default function RegisterComponents() {
         console.log(data);
         if (response.ok) {
           setSuccessMessage("Регистрация прошла успешно!");
+          window.location.href = "/";
           localStorage.setItem("user_id", data.user_id);
           localStorage.setItem("access_token", data.access);
           localStorage.setItem("refresh_token", data.refresh);
         } else {
+          window.location.href = "/";
         }
       } catch (error) {
         console.error(error);
@@ -69,6 +71,10 @@ export default function RegisterComponents() {
       const data = await response.json();
       console.log(data);
       if (response.ok) {
+        localStorage.setItem("user_id", data.user_id);
+        localStorage.setItem("access_token", data.access);
+        localStorage.setItem("refresh_token", data.refresh);
+
         window.location.href = "/";
       } else {
         throw new Error(data.detail);
@@ -124,7 +130,7 @@ export default function RegisterComponents() {
                   className={`bg-blue-300 text-blue-600 w-[280px] outline-none text-[12px] px-[10px] py-[8px] ${style.input} `}
                 />
                 <input
-                  type="text"
+                  type="password"
                   value={formData.password}
                   onChange={(e) =>
                     setFormData({ ...formData, password: e.target.value })
@@ -133,7 +139,7 @@ export default function RegisterComponents() {
                   className={`bg-blue-300 text-blue-600 w-[280px] outline-none text-[12px] px-[10px] py-[8px] ${style.input}`}
                 />
                 <input
-                  type="text"
+                  type="password"
                   value={formData.password2}
                   onChange={(e) =>
                     setFormData({
@@ -150,13 +156,9 @@ export default function RegisterComponents() {
                   onClick={registerHandle}
                   className=" text-[14px] px-[50px] py-[8px] rounded-[32px] bg-blue-600 text-white "
                 >
-                  Регистрация
+                  ВХОД
                 </button>
-                {successMessage && (
-                  <p className="z-[50] top-[20px] left-[50%]">
-                    {successMessage}
-                  </p>
-                )}
+                {successMessage && <p>{successMessage}</p>}
               </div>
               <div className="absolute top-[5px] right-[10px] opacity-50">
                 <Link href="/" className="text-[14px]">
