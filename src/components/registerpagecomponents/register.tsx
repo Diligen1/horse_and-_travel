@@ -11,7 +11,7 @@ export default function RegisterComponents() {
     password: "",
     password2: "",
   });
-
+  const [successMessage, setSuccessMessage] = useState("");
   const registerHandle = async () => {
     if (
       formData.username.trim() === "" ||
@@ -39,7 +39,11 @@ export default function RegisterComponents() {
         const data = await response.json();
         console.log(formData);
         if (data.success) {
+          setSuccessMessage("Регистрация прошла успешно!");
           window.location.href = "/";
+          localStorage.setItem("user_id", data.user_id);
+          localStorage.setItem("access_token", data.access);
+          localStorage.setItem("refresh_token", data.refresh);
         } else {
           window.location.href = "/";
         }
@@ -154,6 +158,7 @@ export default function RegisterComponents() {
                 >
                   ВХОД
                 </button>
+                {successMessage && <p>{successMessage}</p>}
               </div>
               <div className="absolute top-[5px] right-[10px] opacity-50">
                 <Link href="/" className="text-[14px]">
