@@ -12,7 +12,7 @@ function infoData() {
           id: 1,
           number: "500220254",
           email: "shekerbek.suranchiev@gmail.com",
-          adress: "turusbekova 109/1",
+          adress: "kyzart@horse-travel.kg",
         },
       ],
     },

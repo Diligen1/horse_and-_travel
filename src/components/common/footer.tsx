@@ -38,9 +38,24 @@ export default function FooterSection() {
           >
             <h1 className={`text-[18px] pb-[20px] text-white `}>Контакты</h1>
             <div className="h-[120px] flex flex-col justify-around items-start text-white">
-              <p className={`text-[14px] sm:text-[14px]`}>+996{el.number}</p>
-              <p className={`text-[14px] sm:text-[14px]`}>{el.email}</p>
-              <p className={`text-[14px] sm:text-[14px]`}>{el.adress}</p>
+              <Link
+                href={"Номер"}
+                className={`text-[14px] sm:text-[14px] cursor-pointer`}
+              >
+                +996{el.number}
+              </Link>
+              <Link
+                href={"shekerbek.suranchiev@gmail.com"}
+                className={`text-[14px] sm:text-[14px] cursor-pointer`}
+              >
+                {el.email}
+              </Link>
+              <Link
+                href={"kyzart@horse-travel.kg"}
+                className={`text-[14px] sm:text-[14px] cursor-pointer`}
+              >
+                {el.adress}
+              </Link>
             </div>
           </div>
         ))}
