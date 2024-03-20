@@ -113,7 +113,7 @@ export default function Header() {
           </div>
           <div className="pt-[20px] h-[150px]  flex flex-col items-center justify-around ">
             <div>
-              <Link href="/register" className={` lg:block text-white`}>
+              <Link href="/register" className="lg:block text-white">
                 ВХОД
               </Link>
             </div>
