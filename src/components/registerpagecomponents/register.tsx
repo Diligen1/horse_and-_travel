@@ -191,7 +191,7 @@ export default function RegisterComponents() {
                   className={`bg-blue-300 text-blue-600 w-[280px] outline-none text-[12px] px-[10px] py-[8px] ${style.input} `}
                 />
                 <input
-                  type="text"
+                  type="password"
                   value={formData.password}
                   onChange={(e) =>
                     setFormData({ ...formData, password: e.target.value })
