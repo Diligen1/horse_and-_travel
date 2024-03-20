@@ -74,6 +74,7 @@ export default function RegisterComponents() {
         localStorage.setItem("user_id", data.user_id);
         localStorage.setItem("access_token", data.access);
         localStorage.setItem("refresh_token", data.refresh);
+        window.location.href = "/";
       } else {
         throw new Error(data.detail);
       }
