@@ -57,9 +57,9 @@ export default function FeedbackForm() {
               className=" absolute bottom-0 right-[10px] w-[180px] h-[180px] md:w-[250px] md:h-[250px]"
             />
             ;
-            <div className="flex flex-col justify-center items- absolute left-[40px] top-[40%] translate-y-[-60%]">
+            <div className="flex flex-col justify-around absolute left-[40px] top-[40%] translate-y-[-60%]">
               <h1
-                className={`  text-white text-[24px] md:text-[36px] cursor-default pt-[40px] lg:pt-[80px]`}
+                className={`  text-white text-[14px] md:text-[24px] cursor-default pt-[40px] lg:pt-[80px]`}
               >
                 {el.title}
               </h1>

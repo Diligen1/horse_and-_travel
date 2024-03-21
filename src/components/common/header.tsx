@@ -26,7 +26,7 @@ export default function Header() {
         <div>
           <Link
             href="/"
-            className={` m-0 text-[24px] lg:text-[32px] text-white hover:text-blue-900 duration-500`}
+            className={` m-0 text-[18px] lg:text-[24px] text-white hover:text-blue-900 duration-500`}
           >
             Horse and Travel
           </Link>
@@ -60,7 +60,7 @@ export default function Header() {
               href="/register"
               className={` lg:block px-[22px] py-[8px] text-center bg-white text-blue-400 rounded-[18px] hover:bg-blue-400 hover:text-white duration-500`}
             >
-              ВХОД
+              Регистрация
             </Link>
           </div>
         </div>
@@ -114,7 +114,7 @@ export default function Header() {
           <div className="pt-[20px] h-[150px]  flex flex-col items-center justify-around ">
             <div>
               <Link href="/register" className="lg:block text-white">
-                ВХОД
+                Регистрация
               </Link>
             </div>
           </div>

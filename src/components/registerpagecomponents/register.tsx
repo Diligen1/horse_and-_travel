@@ -39,7 +39,7 @@ export default function RegisterComponents() {
         const data = await response.json();
         console.log(data);
         if (response.ok) {
-          setSuccessMessage("Регистрация прошла успешно!");
+          alert("На вашу почту отправлено подверждение ");
           window.location.href = "/";
           localStorage.setItem("user_id", data.user_id);
           localStorage.setItem("access_token", data.access);
@@ -155,9 +155,8 @@ export default function RegisterComponents() {
                   onClick={registerHandle}
                   className=" text-[14px] px-[50px] py-[8px] rounded-[32px] bg-blue-600 text-white "
                 >
-                  ВХОД
+                  Регистрация
                 </button>
-                {successMessage && <p>{successMessage}</p>}
               </div>
               <div className="absolute top-[5px] right-[10px] opacity-50">
                 <Link href="/" className="text-[14px]">
@@ -205,7 +204,7 @@ export default function RegisterComponents() {
                   onClick={authorHandle}
                   className=" text-[14px] px-[50px] py-[8px] rounded-[32px] bg-blue-600 text-white "
                 >
-                  ВХОД
+                  Авторизация
                 </button>
               </div>
               <div className="absolute top-[5px] left-[10px] opacity-50">

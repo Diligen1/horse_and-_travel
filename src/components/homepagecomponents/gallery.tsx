@@ -50,19 +50,16 @@ export default function Gallery() {
             Галерея
           </h1>
         </div>
-        <div className="w-full h-[500px] overflow-auto flex flex-wrap justify-center items-center">
+        <div className="w-full h-[750px] overflow-auto gap-[20px] flex flex-wrap justify-center items-center">
           {imageData.map((el, index) => (
-            <div
-              key={el.id}
-              className=" h-[250px] w-[250px] flex-wrap overflow-y-hidden justify-center items-center"
-            >
+            <div key={el.id} className="w-[300px] h-[300px] overflow-hidden  ">
               {el.images && (
                 <Image
                   src={el.images}
                   alt="#"
                   width={1080}
                   height={1000}
-                  className={`${style.image}`}
+                  className="h-[300px]"
                   onClick={() => handlemodelopen(index)}
                 />
               )}
