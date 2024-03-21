@@ -38,18 +38,18 @@ export default function FooterSection() {
           >
             <h1 className={`text-[18px] pb-[20px] text-white `}>Почта</h1>
             <div className="h-[120px] flex flex-col justify-around items-start text-white">
-              <Link
-                href={"shekerbek.suranchiev@gmail.com"}
+              <a
+                href="mailto:shekerbek.suranchiev@gmail.com"
                 className={`text-[14px] sm:text-[14px] cursor-pointer`}
               >
                 {el.email}
-              </Link>
-              <Link
-                href={"kyzart@horse-travel.kg"}
+              </a>
+              <a
+                href="mailto:kyzart@horse-travel.kg"
                 className={`text-[14px] sm:text-[14px] cursor-pointer`}
               >
                 {el.adress}
-              </Link>
+              </a>
             </div>
           </div>
         ))}
