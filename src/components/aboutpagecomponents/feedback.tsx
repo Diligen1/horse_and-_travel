@@ -39,7 +39,7 @@ export default function FeedbackAbout() {
               <Image src={el.image} alt="/" priority className="w-[80%] " />
             </div>
             <div className="w-[80%] lg:w-[50%] flex flex-col gap-[20px] justify-center items-start">
-              <h2 className=" text-[16px] lg:text-[24px] px-[40px]">
+              <h2 className=" text-[14px] lg:text-[20px] px-[40px]">
                 {el.title}
               </h2>
               <p className="text-[14px] lg:text-[16px] px-[40px]">{el.text}</p>

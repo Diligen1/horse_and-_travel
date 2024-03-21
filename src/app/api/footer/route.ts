@@ -10,7 +10,7 @@ function infoData() {
       info: [
         {
           id: 1,
-          number: "500220254",
+          number: "707 087 008",
           email: "shekerbek.suranchiev@gmail.com",
           adress: "kyzart@horse-travel.kg",
         },

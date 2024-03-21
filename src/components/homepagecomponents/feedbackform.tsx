@@ -70,7 +70,7 @@ export default function FeedbackForm() {
                 href="/about"
                 className={` w-[180px] px-[15px] py-[10px] bg-white text-center text-blue-600 rounded-[16px]`}
               >
-                get ready
+                Узнать о нас
               </Link>
             </div>
           </div>

@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
+import style from "@/styles/gallery.module.css";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -46,14 +47,14 @@ export default function Gallery() {
       <div className="w-full pb-[20px] lg:pb-[80px]z relative border-blue-600 bg-white border-b-[2px] ">
         <div className="text-center py-[20px]">
           <h1 className={`  text-[18px] text-blue-600 lg:text-[36px]`}>
-            GALLERY
+            Галерея
           </h1>
         </div>
         <div className="w-full h-[500px] overflow-auto flex flex-wrap justify-center items-center">
           {imageData.map((el, index) => (
             <div
               key={el.id}
-              className=" h-[250px] w-[260px] overflow-y-hidden justify-center items-center"
+              className=" h-[250px] w-[250px] flex-wrap overflow-y-hidden justify-center items-center"
             >
               {el.images && (
                 <Image
@@ -61,7 +62,7 @@ export default function Gallery() {
                   alt="#"
                   width={1080}
                   height={1000}
-                  className="h-[300px]"
+                  className={`${style.image}`}
                   onClick={() => handlemodelopen(index)}
                 />
               )}

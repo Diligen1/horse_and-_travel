@@ -47,7 +47,7 @@ export default function ReviewsSection() {
     <main className="mx-auto">
       <div className="w-full h-[400px]  lg:h-[500px] flex flex-col bg-white justify-center items-center">
         <div className="pb-[20px] lg:pb-[40px]">
-          <h1 className={`text-[18px] text-blue-600 lg:text-[36px]`}>REVIEW</h1>
+          <h1 className={`text-[18px] text-blue-600 lg:text-[36px]`}>Отзывы</h1>
         </div>
         <Swiper
           pagination={{ clickable: true }}

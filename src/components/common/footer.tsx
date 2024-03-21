@@ -36,14 +36,8 @@ export default function FooterSection() {
             key={el.id}
             className="p-[20px] w-full sm:w-auto flex flex-col justify-around items-start"
           >
-            <h1 className={`text-[18px] pb-[20px] text-white `}>Контакты</h1>
+            <h1 className={`text-[18px] pb-[20px] text-white `}>Почта</h1>
             <div className="h-[120px] flex flex-col justify-around items-start text-white">
-              <Link
-                href={"Номер"}
-                className={`text-[14px] sm:text-[14px] cursor-pointer`}
-              >
-                +996{el.number}
-              </Link>
               <Link
                 href={"shekerbek.suranchiev@gmail.com"}
                 className={`text-[14px] sm:text-[14px] cursor-pointer`}
@@ -88,9 +82,19 @@ export default function FooterSection() {
         <div className="p-[20px] flex flex-col justify-between items-start">
           <h1 className={`text-[18px] pb-[20px] text-white `}>Соц сети</h1>
           <div className=" h-[80px] sm:h-[120px] flex flex-row justify-between gap-[20px] items-start text-white">
-            <i className="fi fi-brands-instagram text-[14px] sm:text-[20px]"></i>
-            <i className="fi fi-brands-whatsapp text-[14px] sm:text-[20px]"></i>
-            <i className="fi fi-brands-facebook text-[14px] sm:text-[20px]"></i>
+            <a href="https://www.instagram.com/yurt_comp_aibek?utm_source=qr&igsh=c3AxYzVqYWpwNmg1">
+              <i className="fi fi-brands-instagram text-[14px] sm:text-[20px]"></i>
+            </a>
+            <a
+              href="https://wa.me/996707087008"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fi fi-brands-whatsapp text-[14px] sm:text-[20px]"></i>
+            </a>
+            <a href="https://www.facebook.com/shekervek?mibextid=ZbWKwL">
+              <i className="fi fi-brands-facebook text-[14px] sm:text-[20px]"></i>
+            </a>
           </div>
         </div>
       </div>

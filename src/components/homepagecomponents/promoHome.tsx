@@ -50,7 +50,7 @@ export default function PromoHome() {
             href="/#gallery"
             className={` sm:px-[30px] px-[20px] py-[10px] rounded-[8px] bg-blue-600 text-white`}
           >
-            set gallery
+            Посмотреть Галерею
           </Link>
         </div>
       </div>
