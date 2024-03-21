@@ -31,18 +31,18 @@ export default function FeedbackAbout() {
     <main className="mx-auto">
       <div className="w-full pt-[120px] flex flex-col gap-[40px]">
         {infoData.map((el) => (
-          <div key={el.id} className="flex flex-row w-full h-[400px]">
-            <div className="w-[50%] flex justify-center items-center">
-              <Image
-                src={el.image}
-                alt="/"
-                priority
-                className="w-[500px] h-[300px]"
-              />
+          <div
+            key={el.id}
+            className="flex flex-col lg:flex-row w-full gap-[20px] h-[400px] items-center justify-center"
+          >
+            <div className="w-[80%] lg:w-[50%] flex justify-center items-center">
+              <Image src={el.image} alt="/" priority className="w-[80%] " />
             </div>
-            <div className="w-[50%] flex flex-col gap-[40px] justify-center items-start">
-              <h2 className="text-[24px] px-[40px]">{el.title}</h2>
-              <p className="text-[16px] px-[40px]">{el.text}</p>
+            <div className="w-[80%] lg:w-[50%] flex flex-col gap-[20px] justify-center items-start">
+              <h2 className=" text-[16px] lg:text-[24px] px-[40px]">
+                {el.title}
+              </h2>
+              <p className="text-[14px] lg:text-[16px] px-[40px]">{el.text}</p>
             </div>
           </div>
         ))}
