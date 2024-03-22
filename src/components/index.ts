@@ -9,6 +9,7 @@ import RegisterComponents from "./registerpagecomponents/register";
 import ReviewsComponents from "./reviewspagecomponents/reviewssection";
 import PromoAbout from "./aboutpagecomponents/promoAbout";
 import FeedbackAbout from "./aboutpagecomponents/feedback";
+
 export {
   Header,
   PromoHome,

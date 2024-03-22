@@ -169,7 +169,7 @@ export default function RegisterComponents() {
             <div
               className={` ${style.right_block} ${
                 isActive ? style.active : ""
-              } w-[50%] h-[100%] flex flex-col justify-center items-center bg-white`}
+              } w-[50%] h-[100%] hidden md:flex flex-col justify-center items-center bg-white`}
             >
               <div className="h-[100px] gap-[10px] flex flex-col  items-center">
                 <h1
