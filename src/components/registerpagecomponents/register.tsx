@@ -11,7 +11,6 @@ export default function RegisterComponents() {
     password: "",
     password2: "",
   });
-  const [successMessage, setSuccessMessage] = useState("");
   const registerHandle = async () => {
     if (
       formData.username.trim() === "" ||
