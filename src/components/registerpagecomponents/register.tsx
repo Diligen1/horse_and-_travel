@@ -149,6 +149,9 @@ export default function RegisterComponents() {
                   className={`bg-blue-300 text-blue-600 w-[280px] outline-none text-[12px] px-[10px] py-[8px] ${style.input} `}
                 />
               </div>
+              <div className="flex md:hidden">
+                <button>Авторизация</button>
+              </div>
               <div className="pt-[20px]">
                 <button
                   onClick={registerHandle}
@@ -166,7 +169,7 @@ export default function RegisterComponents() {
             <div
               className={` ${style.right_block} ${
                 isActive ? style.active : ""
-              } w-[50%] h-[100%] hidden md:flex flex-col justify-center items-center bg-white`}
+              } w-[50%] h-[100%] flex flex-col justify-center items-center bg-white`}
             >
               <div className="h-[100px] gap-[10px] flex flex-col  items-center">
                 <h1
@@ -197,6 +200,9 @@ export default function RegisterComponents() {
                   placeholder="Введите пароль"
                   className={`bg-blue-300 text-blue-600 w-[280px] outline-none text-[12px] px-[10px] py-[8px] ${style.input}`}
                 />
+              </div>
+              <div className="flex md:hidden">
+                <button>Регистрация</button>
               </div>
               <div className="pt-[20px]">
                 <button
