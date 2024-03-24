@@ -5,7 +5,8 @@ import Gallery from "@/components/homepagecomponents/gallery";
 import MapsSection from "@/components/homepagecomponents/mapssection";
 import ReviewsSection from "./homepagecomponents/reviewsection";
 import FooterSection from "./common/footer";
-import RegisterComponents from "./registerpagecomponents/register";
+import RegisterComponents from "./registerpagecomponents/registercomponents";
+import AuthorComponents from "./registerpagecomponents/authorcomponents";
 import ReviewsComponents from "./reviewspagecomponents/reviewssection";
 import PromoAbout from "./aboutpagecomponents/promoAbout";
 import FeedbackAbout from "./aboutpagecomponents/feedback";
@@ -22,4 +23,5 @@ export {
   ReviewsComponents,
   PromoAbout,
   FeedbackAbout,
+  AuthorComponents,
 };

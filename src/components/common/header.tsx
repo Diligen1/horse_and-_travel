@@ -57,7 +57,7 @@ export default function Header() {
         <div className={`hidden lg:flex flex-row `}>
           <div className="ml-[10px]">
             <Link
-              href="/register"
+              href="/author"
               className={` lg:block px-[22px] py-[8px] text-center bg-white text-blue-400 rounded-[18px] hover:bg-blue-400 hover:text-white duration-500`}
             >
               Регистрация
