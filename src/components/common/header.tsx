@@ -99,7 +99,7 @@ export default function Header() {
               </div>
               <div className="flex flex-row items-center justify-center">
                 <i className="fi fi-rr-users-alt text-white"></i>
-                <Link href="/" className={` text-white mx-[15px]`}>
+                <Link href="/about" className={` text-white mx-[15px]`}>
                   О нас
                 </Link>
               </div>

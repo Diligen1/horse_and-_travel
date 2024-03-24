@@ -55,7 +55,7 @@ export default function ReviewsComponents() {
         </div>
         <div className="w-[70%] h-[100%] flex flex-col justify-around items-center ">
           <div className="w-[50%] h-[30%] py-[40px] flex flex-col justify-center items-center ">
-            <h1 className="text-[24px] w-[200px] md:w-auto pb-[20px] font-bold">
+            <h1 className="text-[24px] w-[200px] md:w-auto pb-[20px]  text-blue-600">
               Напишите отзыв
             </h1>
             <div>

@@ -63,7 +63,7 @@ export default function RegisterComponents() {
           </Link>
         </div>
         <div className=" h-[100vh] w-full lg:w-[32%] lg:h-[80%] bg-blue-600 rounded-[16px] justify-center flex flex-col items-center">
-          <div className="text-center text-white text-[30px] pt-[10px]">
+          <div className="text-center text-white text-[30px]">
             <h1>Horse an Travel</h1>
             <h1 className="text-[16px] pt-[20px]">Регистрация</h1>
           </div>
@@ -116,7 +116,7 @@ export default function RegisterComponents() {
               sign up
             </button>
           </div>
-          <div className="pt-[20px] text-center">
+          <div className="pt-[20px] text-center pb-[15px]">
             <p className="text-white text-[14px]">
               После Регистрации Авторизуйтесь <br />
               <Link
