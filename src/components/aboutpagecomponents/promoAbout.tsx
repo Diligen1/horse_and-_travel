@@ -10,7 +10,7 @@ export default function PromoAbout() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://horse-travel.com/baner/detail/baner/1/?Accept=application/json",
+          "https://back.horse-travel.com/api/baner/detail/baner/1/?Accept=application/json",
           {
             headers: {
               Accept: "application/json",
@@ -43,7 +43,7 @@ export default function PromoAbout() {
           <h1
             className={`sm:text-[36px] text-white  text-[18px] cursor-default text-center`}
           >
-            About us
+            Информация о нас
           </h1>
         </div>
       </div>

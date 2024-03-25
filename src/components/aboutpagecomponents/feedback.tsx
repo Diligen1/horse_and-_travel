@@ -29,7 +29,7 @@ export default function FeedbackAbout() {
   }, []);
   return (
     <main className="mx-auto">
-      <div className="w-full pt-[120px] flex flex-col gap-[40px]">
+      <div className="w-full py-[120px] flex flex-col gap-[40px]">
         {infoData.map((el) => (
           <div
             key={el.id}

@@ -14,20 +14,8 @@ function infoData() {
         {
           id: 1,
           image: img,
-          title: "Title",
-          text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi ratione aliquid consectetur vero nihil ex cupiditate non facere voluptatem quae quia tempore sed maiores nisi, quisquam pariatur fugit assumenda optio!",
-        },
-        {
-          id: 2,
-          image: img_2,
-          title: "lorem",
-          text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi ratione aliquid consectetur vero nihil ex cupiditate non facere voluptatem quae quia tempore sed maiores nisi, quisquam pariatur fugit assumenda optio!",
-        },
-        {
-          id: 3,
-          image: img_3,
-          title: "Kuba",
-          text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi ratione aliquid consectetur vero nihil ex cupiditate non facere voluptatem quae quia tempore sed maiores nisi, quisquam pariatur fugit assumenda optio!",
+          title: "О",
+          text: "Мы компания конные путешествие  с 2017 года занимаемся по организации конных туров о́зеро Сон Куль. У нас работает про́фессиональные местные гиды Жакшылык Султан Эрлан, Мы работаем без посредников на прямую с клиентами. Имеется лошади ю́рто́чные лагеря гостевой до́м в Кызарт Мы всегда рады к сотрудничеству, добро  по́жаловать солнечный Кы́ргызстан, В компании конные путешествие",
         },
       ],
     },
