@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
+import dynamic from "next/dynamic";
 import "../styles/globals.css";
 
 const inter = Roboto({
@@ -7,7 +8,7 @@ const inter = Roboto({
   display: "swap",
   subsets: ["cyrillic", "latin"],
 });
-
+const Head = dynamic(() => import("next/head"));
 export const metadata: Metadata = {
   title: "Horse | and | Travel",
   description:
@@ -36,6 +37,7 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://cdn-uicons.flaticon.com/2.1.0/uicons-brands/css/uicons-brands.css"
         ></link>
+        <meta name="description" content={metadata.description as string} />
       </head>
       <body className={inter.className}>{children}</body>
     </html>
