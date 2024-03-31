@@ -23,7 +23,7 @@ export default function ReviewsSection() {
           user: userId,
         };
         const response = await fetch(
-          "https://back.horse-travel.com/api/reviews/reviews/",
+          "https://back.horse-travel.com/api/reviews/list/reviews/",
           {
             headers: {
               Accept: "application/json",
