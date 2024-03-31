@@ -14,34 +14,37 @@ export default function ReviewsSection() {
   ]);
 
   useEffect(() => {
-    async function RevDate() {
+    async function fetchReviews() {
       try {
         const accessToken = localStorage.getItem("access_token");
         const userId = localStorage.getItem("user_id");
-        const reviewData = {
-          ...reviewDate,
-          user: userId,
-        };
-        const response = await fetch(
-          "https://back.horse-travel.com/api/reviews/list/reviews/",
+        const endpoint = accessToken
+          ? "https://back.horse-travel.com/api/reviews/reviews/"
+          : "https://back.horse-travel.com/api/reviews/list/reviews/";
 
-          {
-            headers: {
-              Accept: "application/json",
-              Authorization: `Bearer ${accessToken}`,
-            },
-          }
-        );
+        const response = await fetch(endpoint, {
+          headers: accessToken
+            ? {
+                Accept: "application/json",
+                Authorization: `Bearer ${accessToken}`,
+              }
+            : {
+                Accept: "application/json",
+              },
+        });
+
         if (!response.ok) {
-          throw new Error("Failed to fetch user reviews");
+          throw new Error("Failed to fetch reviews");
         }
+
         const data = await response.json();
         setReviewDate(data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     }
-    RevDate();
+
+    fetchReviews();
   }, []);
 
   return (
