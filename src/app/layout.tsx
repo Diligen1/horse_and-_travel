@@ -10,7 +10,8 @@ const inter = Roboto({
 
 export const metadata: Metadata = {
   title: "Horse | and | Travel",
-  description: "Конный тур в Бишкеке",
+  description:
+    "Индивидуальный тур - это возможность получить те впечатления и эмоции которые вы захотите, а не выбрать только из тех что дадут",
   icons: {
     other: {
       rel: "apple-touch-icon-precomposed",
