@@ -43,7 +43,7 @@ export default function RegisterComponents() {
           localStorage.setItem("access_token", data.access);
           localStorage.setItem("refresh_token", data.refresh);
         } else {
-          window.location.href = "/";
+          window.location.href = "/author";
         }
       } catch (error) {
         console.error(error);
