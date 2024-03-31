@@ -24,6 +24,7 @@ export default function ReviewsSection() {
         };
         const response = await fetch(
           "https://back.horse-travel.com/api/reviews/list/reviews/",
+
           {
             headers: {
               Accept: "application/json",
