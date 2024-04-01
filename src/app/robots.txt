@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+Host: www.horse-travel.com
+Sitemap: https://horse-travel.com/sitemap.xml
