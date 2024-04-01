@@ -16,21 +16,13 @@ export default function ReviewsSection() {
   useEffect(() => {
     async function fetchReviews() {
       try {
-        const accessToken = localStorage.getItem("access_token");
-        const userId = localStorage.getItem("user_id");
-        const endpoint = accessToken
-          ? "https://back.horse-travel.com/api/reviews/reviews/"
-          : "https://back.horse-travel.com/api/reviews/list/reviews/";
+        const endpoint =
+          "https://back.horse-travel.com/api/reviews/list/reviews/";
 
         const response = await fetch(endpoint, {
-          headers: accessToken
-            ? {
-                Accept: "application/json",
-                Authorization: `Bearer ${accessToken}`,
-              }
-            : {
-                Accept: "application/json",
-              },
+          headers: {
+            Accept: "application/json",
+          },
         });
 
         if (!response.ok) {
