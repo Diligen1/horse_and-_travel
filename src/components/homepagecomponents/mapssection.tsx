@@ -1,5 +1,4 @@
 "use client";
-import MyMap from "../common/myMap";
 import MyMap2 from "../common/myMap2";
 
 export default function MapsSection() {
@@ -7,7 +6,6 @@ export default function MapsSection() {
     <main className="mx-auto">
       <div className="w-full h-[500px] flex lg:flex-row flex-col gap-[40px] justify-center items-center">
         <MyMap2 />
-        <MyMap />
       </div>
     </main>
   );
