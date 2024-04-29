@@ -9,12 +9,12 @@ import {
 export default function Home() {
   return (
     <main>
-      <PromoHome />
+      {/* <PromoHome />
       <FeedbackForm />
       <Gallery />
       <ReviewsSection />
       <MapsSection />
-      <FooterSection />
+      <FooterSection /> */}
     </main>
   );
 }

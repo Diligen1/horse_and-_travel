@@ -4,9 +4,9 @@ import { ReviewsComponents } from "@/components";
 export default function ReviewsSection() {
   return (
     <main>
-      <Header />
+      {/* <Header />
       <ReviewsComponents />
-      <FooterSection />
+      <FooterSection /> */}
     </main>
   );
 }
