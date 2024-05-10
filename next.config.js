@@ -2,6 +2,6 @@
 
 module.exports = {
   images: {
-    domains: ["back.horse-travel.com"],
+    domains: ["backk.horse-travel.com"],
   },
 };
