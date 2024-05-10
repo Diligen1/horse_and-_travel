@@ -17,7 +17,7 @@ export default function ReviewsSection() {
     async function fetchReviews() {
       try {
         const endpoint =
-          "https://back.horse-travel.com/api/reviews/list/reviews/";
+          "https://backk.horse-travel.com/api/reviews/list/reviews/";
 
         const response = await fetch(endpoint, {
           headers: {

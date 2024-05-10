@@ -20,7 +20,7 @@ export default function ReviewsComponents() {
         };
 
         const response = await fetch(
-          "https://back.horse-travel.com/api/reviews/reviews/",
+          "https://backk.horse-travel.com/api/reviews/reviews/",
           {
             method: "POST",
             headers: {

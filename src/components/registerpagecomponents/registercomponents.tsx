@@ -25,7 +25,7 @@ export default function RegisterComponents() {
     } else {
       try {
         const response = await fetch(
-          "https://back.horse-travel.com/api/users/register/user/",
+          "https://backk.horse-travel.com/api/users/register/user/",
           {
             method: "POST",
             headers: {

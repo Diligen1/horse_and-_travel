@@ -15,7 +15,7 @@ export default function FeedbackForm() {
     const Feedbackform = async () => {
       try {
         const response = await fetch(
-          "https://back.horse-travel.com/api/info/list/info/",
+          "https://backk.horse-travel.com/api/info/list/info/",
           {
             headers: {
               Accept: "application/json",

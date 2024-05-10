@@ -12,7 +12,7 @@ export default function AuthorComponents() {
   const authorHandle = async () => {
     try {
       const response = await fetch(
-        "https://back.horse-travel.com/api/users/login/user/",
+        "https://backk.horse-travel.com/api/users/login/user/",
         {
           method: "POST",
           headers: {
