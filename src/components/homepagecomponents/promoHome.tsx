@@ -11,7 +11,7 @@ export default function PromoHome() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://backk.horse-travel.com/api/baner/detail/baner/1/?Accept=application/json",
+          "https://backk.horse-travel.com/api/baner/detail/baner/1/",
           {
             headers: {
               Accept: "application/json",
@@ -19,7 +19,7 @@ export default function PromoHome() {
           }
         );
         const responseData = await response.json();
-        setImageData(responseData[0].image);
+        setImageData(responseData.image);
       } catch (error) {
         console.error("Ошибка при загрузке данных:", error);
       }
@@ -32,7 +32,7 @@ export default function PromoHome() {
       <Header />
       <div className="w-full relative lg:max-h-[760px] flex justify-center items-start">
         {imageData && (
-          <Image
+          <img
             src={imageData}
             width={1080}
             height={1000}

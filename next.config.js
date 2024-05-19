@@ -2,6 +2,13 @@
 
 module.exports = {
   images: {
-    domains: ["backk.horse-travel.com"],
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "backk.horse-travel.com",
+        pathname: "/**",
+      },
+    ],
   },
 };
+// domains: ["backk.horse-travel.com"],

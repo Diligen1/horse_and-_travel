@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import style from "@/styles/gallery.module.css";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -12,6 +11,7 @@ import "swiper/css/scrollbar";
 export default function Gallery() {
   const [modalopen, setModelopen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
+
   const [imageData, setImageData] = useState([{ id: 1, images: "" }]);
 
   function handlemodelopen(index: number) {
@@ -26,7 +26,7 @@ export default function Gallery() {
     async function ColImage() {
       try {
         const response = await fetch(
-          "https://backk.horse-travel.com/api/gallerys/detail/gallery/{id}/",
+          "https://backk.horse-travel.com/api/gallerys/list/gallerys/",
           {
             headers: {
               Accept: "application/json",
@@ -46,7 +46,7 @@ export default function Gallery() {
     <main className="mx-auto " id="gallery">
       <div className="w-full pb-[20px] lg:pb-[80px]z relative border-blue-600 bg-white border-b-[2px] ">
         <div className="text-center py-[20px]">
-          <h1 className={`  text-[18px] text-blue-600 lg:text-[36px]`}>
+          <h1 className={`text-[18px] text-blue-600 lg:text-[36px]`}>
             Галерея
           </h1>
         </div>
@@ -54,7 +54,7 @@ export default function Gallery() {
           {imageData.map((el, index) => (
             <div key={el.id} className="w-[250px] h-[250px] overflow-hidden  ">
               {el.images && (
-                <Image
+                <img
                   src={el.images}
                   alt="#"
                   width={1080}
@@ -89,7 +89,7 @@ export default function Gallery() {
               {imageData.map((el) => (
                 <SwiperSlide key={el.id} className=" w-full h-[100%]  ">
                   {el.images && (
-                    <Image
+                    <img
                       src={el.images}
                       alt="#"
                       width={1080}
