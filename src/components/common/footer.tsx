@@ -95,7 +95,7 @@ export default function FooterSection() {
             <a href="https://www.facebook.com/shekervek?mibextid=ZbWKwL">
               <i className="fi fi-brands-facebook text-[14px] sm:text-[20px]"></i>
             </a>
-            <a href="https://t.me/+996707087008">
+            <a href="https://t.me/+996707087008~">
               <i className="fi fi-brands-telegram text-[14px] sm:text-[20px]"></i>
             </a>
           </div>

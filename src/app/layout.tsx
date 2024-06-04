@@ -10,7 +10,7 @@ const inter = Roboto({
 
 export const metadata: Metadata = {
   title: {
-    default: "Horse | and | Travel",
+    default: "Kyrgyz Horse Travel",
     template: "%s | Horse | and | Travel",
   },
   description:
