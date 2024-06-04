@@ -11,7 +11,7 @@ const inter = Roboto({
 export const metadata: Metadata = {
   title: {
     default: "Kyrgyz Horse Travel",
-    template: "%s | Horse | and | Travel",
+    template: "%s | Kyrgyz Horse Travel",
   },
   description:
     "Индивидуальный тур - это возможность получить те впечатления и эмоции которые вы захотите, а не выбрать только из тех что дадут",
