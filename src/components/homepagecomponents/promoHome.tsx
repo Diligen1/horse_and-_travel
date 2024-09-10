@@ -42,9 +42,9 @@ export default function PromoHome() {
         )}
         <div className="absolute top-0 sm:top-[20%] left-[50%] lg:top-[40%] lg:left-[50%] w-full transform translate-x-[-50%] -translate-y-[-50%] lg:translate-x-[-50%] lg:-translate-y-[-50%]   flex flex-col justify-evenly  items-center">
           <h1
-            className={` sm:text-[36px] text-[18px] text-white cursor-default  pb-[20px]`}
+            className={` text-center sm:text-[36px] text-[18px] text-white cursor-default  pb-[20px]`}
           >
-            Horse and Travel
+            Horse Travel <br /> company Son Kol lake
           </h1>
           <Link
             href="/#gallery"

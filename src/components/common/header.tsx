@@ -26,9 +26,9 @@ export default function Header() {
         <div>
           <Link
             href="/"
-            className={` m-0 text-[18px] lg:text-[24px] text-white hover:text-blue-900 duration-500`}
+            className={` m-0 text-[16px] lg:text-[22px] align-center text-white hover:text-blue-900 duration-500`}
           >
-            Horse and Travel
+            Horse Travel <br /> company Son Kol lake
           </Link>
         </div>
         <div className=" hidden lg:flex flex-row items-center justify-around gap-[5px] ">
