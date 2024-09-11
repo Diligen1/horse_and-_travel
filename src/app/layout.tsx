@@ -10,8 +10,8 @@ const inter = Roboto({
 
 export const metadata: Metadata = {
   title: {
-    default: "Horse Travel company Son Kol lake ",
-    template: "%s | Horse Travel company Son Kol lake ",
+    default: "Horse travel company Kyzart Kilemche Son Kol ",
+    template: "%s | Horse travel company Kyzart Kilemche Son Kol ",
   },
   description:
     "Индивидуальный тур - это возможность получить те впечатления и эмоции которые вы захотите, а не выбрать только из тех что дадут",

@@ -44,7 +44,7 @@ export default function PromoHome() {
           <h1
             className={` text-center sm:text-[36px] text-[18px] text-white cursor-default  pb-[20px]`}
           >
-            Horse Travel <br /> company Son Kol lake
+            Horse Travel <br /> company Kyzart Kilemche Son Kol
           </h1>
           <Link
             href="/#gallery"

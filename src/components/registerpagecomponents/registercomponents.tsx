@@ -65,7 +65,8 @@ export default function RegisterComponents() {
         <div className=" h-[100vh] w-full lg:w-[32%] lg:h-[80%] bg-blue-600 rounded-[16px] justify-center flex flex-col items-center">
           <div className="text-center text-white text-[26px]">
             <h1>
-              Horse Travel <br /> company Son Kol lake
+              Horse Travel <br />
+              company Kyzart Kilemche Son Kol
             </h1>
             <h1 className="text-[16px] pt-[20px]">Регистрация</h1>
           </div>

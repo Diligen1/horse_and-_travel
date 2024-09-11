@@ -28,7 +28,7 @@ export default function Header() {
             href="/"
             className={` m-0 text-[16px] lg:text-[22px] align-center text-white hover:text-blue-900 duration-500`}
           >
-            Horse Travel <br /> company Son Kol lake
+            Horse Travel <br /> company Kyzart Kilemche Son Kol
           </Link>
         </div>
         <div className=" hidden lg:flex flex-row items-center justify-around gap-[5px] ">
